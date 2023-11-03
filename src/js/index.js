@@ -68,6 +68,7 @@ import {
 import { boostService, boostServiceAllBoosts, City, emissaryService, startupService } from "./msg/StartupService.js";
 import setOptions, { showOptions } from "./vars/showOptions.js";
 import "../css/main.scss";
+import { mapToStyles } from "@popperjs/core/lib/modifiers/computeStyles.js";
 console.debug(toolOptions);
 
 let contentTypes = {};
@@ -655,6 +656,8 @@ function handleRequestFinished(request) {
         for (var i = 0; i < parsed.length; i++) {
           const msg = parsed[i];
 
+          console.debug("msg", msg);
+
           // check if this is static data service info that holds all URLs to all metadata files
           if (msg.requestClass === "StaticDataService" && msg.requestMethod == "getMetadata") {
             // find an URL that has city entities
@@ -813,10 +816,12 @@ function handleRequestFinished(request) {
             if (msg.responseData) {
               EpocTime = msg.responseData.time;
               // console.debug(EpocTime,msg.responseData);
-              helper.fShowIncidents();
-            }         
-          } else if (msg.requestClass == "TimerService" && msg.requestMethod == "getTimers"){
-            clearForBattleground();
+            }
+          } else if (msg.requestClass == "AnnouncementsService" && msg.requestMethod == "fetchAllAnnouncements") {
+            clearForMainCity();
+            helper.fShowIncidents();
+          } else if (msg.requestClass == "TimerService" && msg.requestMethod == "getTimers") {
+            //clearForBattleground();
           } else if (msg.requestClass == "ResourceService") {
             if (msg.requestMethod == "getResourceDefinitions") {
               /*Resource Service */
@@ -1275,6 +1280,7 @@ function handleRequestFinished(request) {
               getPlayerLeaderboard(msg);
             } else if (msg.requestMethod == "getBattleground") {
               /*Guild Battleground*/
+              clearForBattleground();
               getBattleground(msg);
             } else if (msg.requestMethod == "getState") {
               if (msg.responseData.stateId == "participating") {
@@ -1964,6 +1970,31 @@ function clearForBattleground() {
   if (gvgAges) gvgAges.innerHTML = "";
 }
 
+function clearForMainCity() {
+  // output.innerHTML = ``;
+  // cityrewards.innerHTML = ``;
+  incidents.innerHTML = ``;
+  donation2DIV.innerHTML = ``;
+  donationDIV2.innerHTML = ``;
+  greatbuilding.innerHTML = ``;
+  targets.innerHTML = ``;
+  guild.innerHTML = ``;
+  debug.innerHTML = ``;
+  info.innerHTML = ``;
+  donationDIV.innerHTML = ``;
+  visitstats.innerHTML = ``;
+  visitstats.className = "";
+  cultural.innerHTML = ``;
+  cultural.className = "";
+  gvg.innerHTML = ``;
+  gvg.className = "";
+  // armyDIV.innerHTML = ``;
+  treasury.innerHTML = "";
+  treasuryLog.innerHTML = "";
+  if (gvgSummary) gvgSummary.innerHTML = "";
+  if (gvgAges) gvgAges.innerHTML = "";
+}
+
 function clearStartup() {
   cityinvested.innerHTML = ``;
   output.innerHTML = ``;
@@ -2202,7 +2233,9 @@ export function showReward(reward) {
   ${element.icon("rewardsicon", "rewardsText", collapse.collapseRewards)}
 	<strong><span data-i18n="reward">REWARDS:</span></strong></p>
 	${element.close()}
-	<div id="rewardsText" class="overflow resize collapse ${collapse.collapseRewards ? "" : "show"}">${text}</div></div>`;
+	<div id="rewardsText" stype="height: 400px" class="overflow resize collapse ${
+    collapse.collapseRewards ? "" : "show"
+  }">${text}</div></div>`;
   rewardObserve();
   document.getElementById("rewardsTextLabel").addEventListener("click", collapse.fCollapseRewards);
 }
