@@ -993,7 +993,7 @@ function fLoadi18n() {
         // de: "i18n/de.json",
         el: "i18n/el.json",
         gr: "i18n/gr.json",
-        // it: "i18n/it.json",
+        it: "i18n/it.json ",
         // pt: "i18n/pt.json",
         // ru: "i18n/ru.json",
         // sr_Cyrl: "i18n/sr_cyrl.json",
