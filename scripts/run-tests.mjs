@@ -19,6 +19,13 @@ import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
+// `tests/` is what a clone receives. The agent layer's own tests live in
+// `.agents/tests/` and are git-ignored with everything else in `.agents/`,
+// so they run for a developer who has that directory and are simply absent
+// from a clone rather than skipping there. Both roots are two levels deep,
+// which is what lets those tests resolve the project root with `../..`.
+const TEST_ROOTS = ['tests', '.agents/tests'];
+
 function collectTestFiles(dir, out) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const full = join(dir, entry.name);
@@ -32,14 +39,16 @@ function collectTestFiles(dir, out) {
 }
 
 let files = [];
-try {
-  files = collectTestFiles(join(ROOT, 'tests'), files);
-} catch {
-  // No tests directory yet.
+for (const root of TEST_ROOTS) {
+  try {
+    files = collectTestFiles(join(ROOT, root), files);
+  } catch {
+    // Root absent — a clone has no `.agents/`.
+  }
 }
 
 if (files.length === 0) {
-  console.error('Error: no *.test.mjs files found under tests/');
+  console.error(`Error: no *.test.mjs files found under ${TEST_ROOTS[0]}/`);
   process.exit(1);
 }
 

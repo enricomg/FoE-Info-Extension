@@ -20,7 +20,7 @@ const SCRIPT = path.join(root, 'scripts', 'audit-references.mjs');
  */
 function runAudit(files, siblings = {}) {
   // `siblings` are written NEXT TO the fixture, matching how the real script
-  // resolves `../peer-repo` relative to its own repository root.
+  // resolves `../forge-hammer` relative to its own repository root.
   const parent = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-refs-'));
   const dir = path.join(parent, 'proj');
   fs.mkdirSync(dir, { recursive: true });
@@ -33,7 +33,7 @@ function runAudit(files, siblings = {}) {
       fs.writeFileSync(target, body);
     }
     // Sibling repositories live NEXT TO the fixture, matching how the real
-    // script resolves `../peer-repo` relative to its own repository root.
+    // script resolves `../forge-hammer` relative to its own repository root.
     for (const [rel, body] of Object.entries(siblings)) {
       const target = path.join(parent, rel);
       fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -134,50 +134,31 @@ test('url-path check: a rooted filesystem path that is gone is still drift', () 
   );
 });
 
-test('sibling-repo check: a path in a documented fork resolves, not flagged', () => {
-  // Tracked source and tests reference the peer-repo fork and its src/extras/
-  // module. Those paths are correct but live in another repository, so the
-  // auditor must verify them against that repository rather than report them
-  // as unresolved.
+test('sibling-repo check: a path in a peer repo resolves, not flagged', () => {
+  // Tracked docs can reference a peer repository's module by path. Those paths
+  // are correct but live in another repository, so the auditor must verify
+  // them against that repository rather than report them as unresolved.
   //
   // `src/` exists in the fixture on purpose. Without it the auditor
   // short-circuits before trying any candidate and the assertion holds
   // vacuously — so this asserts BOTH directions: the same prose is reported
-  // when the fork is absent, and silent when it is present. That is what makes
+  // when the peer is absent, and silent when it is present. That is what makes
   // it a test of sibling resolution rather than of the fixture.
-  const readme = 'The fork keeps its module at `src/extras/index.js`.\n';
+  const readme = 'The peer repo keeps its module at `src/extras/index.js`.\n';
   const absent = runAudit({ 'README.md': readme, 'src/app.js': 'x\n' });
   assert.ok(
     tokens(absent).includes('src/extras/index.js'),
-    'without the fork present, the path must be reported',
+    'without the peer repo present, the path must be reported',
   );
 
   const present = runAudit(
     { 'README.md': readme, 'src/app.js': 'x\n' },
-    { 'peer-repo/src/extras/index.js': 'export const x = 1;\n' },
+    { 'forge-hammer/src/extras/index.js': 'export const x = 1;\n' },
   );
   assert.deepEqual(
     present.filter((f) => f.kind === 'unresolved-path'),
     [],
-    'a path that exists in the sibling fork must not be reported',
-  );
-});
-
-test('sibling-repo check: a bare fragment under the fork resolves too', () => {
-  // `fn/extras.js` is written relative to src/extras/, so it only resolves
-  // against the fork's extras root. Without that root it looks like a fragment
-  // belonging to this repository's own src/js/fn.
-  const findings = runAudit(
-    { 'README.md': 'The live files are `fn/extras.js` and `fn/users.js`.\n' },
-    {
-      'peer-repo/src/extras/fn/extras.js': 'export const a = 1;\n',
-      'peer-repo/src/extras/fn/users.js': 'export const b = 2;\n',
-    },
-  );
-  assert.deepEqual(
-    findings.filter((f) => f.kind === 'unresolved-path-fragment'),
-    [],
-    "a fragment existing under the fork's extras root must not be reported",
+    'a path that exists in the sibling repo must not be reported',
   );
 });
 

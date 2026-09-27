@@ -67,15 +67,9 @@ case "$TARGET" in
     TARGET_DIR="${METADATA_DIR:-${PARENT_WORKSPACE}/metadata-store}"
     export GRAPHIFY_OUT="${TARGET_DIR}/graphify-out"
     ;;
-  peer-repo)
-    # Closed-source fork. Its graph stays local: graphify-out/ is already in that
-    # repo's .gitignore, so nothing here can reach the closed-source history.
-    TARGET_DIR="${PEER_REPO_DIR:-${PARENT_WORKSPACE}/peer-repo}"
-    export GRAPHIFY_OUT="${TARGET_DIR}/graphify-out"
-    ;;
   *)
     echo "Unknown target: $TARGET" >&2
-    echo "Supported targets: foe-info, foe-info-original, forge-hammer, metadata, peer-repo" >&2
+    echo "Supported targets: foe-info, foe-info-original, forge-hammer, metadata" >&2
     exit 1
     ;;
 esac

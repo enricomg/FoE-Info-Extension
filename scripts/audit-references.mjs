@@ -119,19 +119,17 @@ const LAYER_ROOTS = [
 ];
 
 // Sibling repositories in the domain. Tracked source and tests reference the
-// offline metadata store and the peer repos by path (e.g. `src/extras/index.js`
-// in the peer-repo fork), so those references must be verifiable too — otherwise
-// the auditor reports correct cross-repo references as unresolved. Only
-// directories that actually exist are used, so a repo that is absent locally
-// cannot fail the check.
+// offline metadata store and the peer repos by path, so those references must
+// be verifiable too — otherwise the auditor reports correct cross-repo
+// references as unresolved. Only directories that actually exist are used, so
+// a repo that is absent locally cannot fail the check.
 // The repository root comes first so a token that already carries its own
-// prefix (`src/extras/index.js`) resolves without doubling that prefix; the
-// narrower roots let a bare fragment (`fn/extras.js`) resolve too.
+// prefix (`src/msg/BonusService.js`) resolves without doubling that prefix;
+// the narrower `/src` roots let a bare fragment (`msg/BonusService.js`)
+// resolve too.
 const SIBLING_ROOTS = [
-  '../peer-repo',
   '../FoE-Info-Extension-original',
   '../forge-hammer',
-  '../peer-repo/src/extras',
   '../FoE-Info-Extension-original/src',
   '../forge-hammer/src',
 ].filter((r) => existsSync(join(ROOT, r)));
