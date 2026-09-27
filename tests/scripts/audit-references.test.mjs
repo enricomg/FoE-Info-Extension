@@ -135,9 +135,10 @@ test('url-path check: a rooted filesystem path that is gone is still drift', () 
 });
 
 test('sibling-repo check: a path in a documented fork resolves, not flagged', () => {
-  // docs/TODO.md documents the peer-repo fork and its src/extras/ module. Those
-  // paths are correct but live in another repository, so the auditor must
-  // verify them against that repository rather than report them as unresolved.
+  // Tracked source and tests reference the peer-repo fork and its src/extras/
+  // module. Those paths are correct but live in another repository, so the
+  // auditor must verify them against that repository rather than report them
+  // as unresolved.
   //
   // `src/` exists in the fixture on purpose. Without it the auditor
   // short-circuits before trying any candidate and the assertion holds
@@ -177,5 +178,40 @@ test('sibling-repo check: a bare fragment under the fork resolves too', () => {
     findings.filter((f) => f.kind === 'unresolved-path-fragment'),
     [],
     "a fragment existing under the fork's extras root must not be reported",
+  );
+});
+
+test('a path into a git-ignored root is reported, not read as a convention', () => {
+  // `docs/TODO.md` is the exact shape this rule exists for. Once `docs/` stops
+  // being tracked its head is no longer a directory, so the `a.b/c` convention
+  // heuristic used to skip the token — and every citation of the backlog went
+  // unreported while still sitting in tracked files.
+  const prose = 'The open items are listed in `docs/TODO.md`.\n';
+
+  assert.ok(
+    !tokens(runAudit({ 'README.md': prose })).includes('docs/TODO.md'),
+    'with no exclusion on record the convention heuristic still applies',
+  );
+  assert.ok(
+    tokens(runAudit({ 'README.md': prose, '.gitignore': '/docs/\n' })).includes(
+      'docs/TODO.md',
+    ),
+    'an excluded root turns the token into a broken reference that is reported',
+  );
+});
+
+test('a documented build output is not a broken reference', () => {
+  // The same rule must not fire on `build/FoE-Info-DEV`, which README and
+  // CONTRIBUTING name as the unpacked extension a contributor produces with
+  // `npm run dev`. It is absent from every clone by design, so reporting it
+  // would make a correct document look broken.
+  const findings = runAudit({
+    'README.md': 'Load `build/FoE-Info-DEV` as an unpacked extension.\n',
+    '.gitignore': 'build/\n',
+  });
+  assert.deepEqual(
+    findings.filter((f) => f.kind === 'unresolved-path'),
+    [],
+    'a generated output directory named in setup instructions is not drift',
   );
 });

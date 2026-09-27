@@ -1,10 +1,10 @@
 /**
  * The no-unescaped-html-interpolation rule guards the encoding half of
- * docs/TODO.md:36, which the i18n rule structurally cannot see. The i18n rule
- * reports hardcoded TEXT; a file can be completely i18n-clean and still
- * interpolate a payload-supplied name into innerHTML unescaped. Both verified
- * defects of that shape were `+=` accumulators, which is what this rule
- * inspects.
+ * untrusted-text handling, which the i18n rule structurally cannot see. The
+ * i18n rule reports hardcoded TEXT; a file can be completely i18n-clean and
+ * still interpolate a payload-supplied name into innerHTML unescaped. Both
+ * verified defects of that shape were `+=` accumulators, which is what this
+ * rule inspects.
  *
  * These cases run the real rule through a real ESLint instance, so a rule that
  * silently stops matching is caught here rather than in production.

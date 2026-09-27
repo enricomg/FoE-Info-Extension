@@ -74,8 +74,7 @@ and forwarded into FoE-Info's pipeline. There is no signature and no nonce.
 Treat all payloads arriving over this channel as **untrusted page-controlled
 input**, exactly like network-derived data. Fields sourced from either intake
 path (player names, guild names, message text) must be escaped or assigned via
-`textContent` before being placed into panel markup; see `docs/TODO.md` §2.1
-for the current known escaping gaps.
+`textContent` before being placed into panel markup.
 
 This spoofing surface is inherent to the MAIN-world design, not authenticated
 game-server provenance.
@@ -97,8 +96,7 @@ All external posting requires explicit user configuration and, where
 applicable, a user click. Destinations are user-controlled; the extension does
 not publish game data anywhere the user has not configured. Reviewers and
 security analysts should treat these endpoints as credentials-scoped outbound
-channels (see §0 of `docs/TODO.md`) and validate them at intake before any
-hardening work.
+channels, and validate them at intake before any hardening work.
 
 FoE-Info performs **no telemetry** of its own: it has no analytics, no crash
 reporting, and no update pings beyond normal extension update mechanics.
@@ -112,8 +110,7 @@ reporting, and no update pings beyond normal extension update mechanics.
 - **Game-derived caches**: player-name caches, Great Building registry
   entries, ScoreDB lookup results, and metadata responses are persisted in
   `chrome.storage.local` to survive restarts. Some of these caches are
-  currently unbounded or weakly bounded — see `docs/TODO.md` §4 for the
-  bounded-retention items.
+  currently unbounded or weakly bounded — they carry no retention policy.
 - The extension does not sync data to any server run by the project. The only
   outbound writes are the user-configured external destinations above.
 
@@ -144,8 +141,6 @@ base-uri 'none'`. No `unsafe-inline`, no `unsafe-eval`, no remote code
 - FoE-Info **reads** the game's own traffic; it does not modify game requests,
   submit actions, click, or automate gameplay in reviewed paths.
 - It **does** inject a MAIN-world interceptor into game pages in current
-  builds; documentation elsewhere that says "no injection" is being corrected
-  (see `docs/TODO.md` §0 and §2.4). The accurate statement is: _no
-  extension-generated game actions_, with passive observation hooks on game
-  pages.
+  builds. The accurate statement is: _no extension-generated game actions_,
+  with passive observation hooks on game pages.
 - External publication is opt-in per the External Publication section.

@@ -6,18 +6,18 @@
 - Unclassified: 10 file(s) not represented in the graph (top: (none) 5, .scss 4, .toml 1)
 
 ## Summary
-- 4266 nodes · 8159 edges · 388 communities (202 shown, 186 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 870 edges (avg confidence: 0.86)
+- 4278 nodes · 8194 edges · 421 communities (218 shown, 203 thin omitted)
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 874 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `629de496`
+- Built from commit: `701013fc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - collapse.js
-- date.js
+- storageListener.js
 - ui/renderCityStats.js
 - utils/storage.js
 - Copy Utility
@@ -39,18 +39,18 @@
 - entityProductionParser.js
 - GreatBuildingsService.js
 - Resource Service
-- indexUiBindings.js
+- ui-element-bindings.test.mjs
 - Dev Dependencies
 - scripts
 - GuildBattlegroundService.js
 - registerServices.js
 - rpcRouter.js
-- GreatBuildingsState
+- GreatBuildingDomainState.js
 - Manifest
 - helper.js
-- ref_node_assert
+- ref_node_test
 - cardVisibility.js
-- armyPanel.js
+- ArmyUnitManagementService.js
 - renderBindings.js
 - bignumberUtils.js
 - GbgSignalService.js
@@ -80,11 +80,11 @@
 - Query Metadata Store
 - indexBridgeSetup.js
 - FriendsTavernService
-- HiddenRewardService
+- domain-services-city.test.mjs
 - gbDonationPanel.js
 - investedPanel.js
 - File System
-- domain-services-city.test.mjs
+- AllyService.js
 - subset-icons-font.mjs
 - galaxyPanel.js
 - MetadataDomainCollections
@@ -92,14 +92,14 @@
 - Fork Drift
 - CityMapService.js
 - panelDispatcher.js
-- MessageDispatcher.js
+- ref_node_assert
 - MetadataRelations
 - treasuryPanel.js
 - TSConfig
 - rpc-contract.mjs
-- bignumber.js
+- DailyProductionAidCalculator.js
 - UI Bindings
-- GuildExpeditionService.js
+- registerAllServices
 - TargetGenerator
 - rawDispatchPipeline.js
 - QuestService
@@ -107,22 +107,22 @@
 - Combat Boosts
 - great-buildings-unified.test.mjs
 - BonusState
-- ResourceState
+- BlueGalaxyState
 - StartupRenderState
 - el
 - Globals
-- ref_node_child_process
+- mcp-profile.test.mjs
 - RewardState
 - ref_node_fs
-- toBigNumber
+- BlueGalaxyCalculator.js
 - FOE Info Extension
 - auditSource
 - [0.0.833] - 2026-09-11
 - Required
 - GbDonationService.js
 - BonusService.js
-- QuantumState
-- ArmyUnitManagementService.js
+- cityPanelToggles.js
+- ref_node_child_process
 - check-version.mjs
 - CityProductionService.js
 - outpostPanel.js
@@ -143,7 +143,7 @@
 - WebStoreListing
 - FoE-Info Debugging & Diagnostic Infrastructure
 - validate-commit-msg.mjs
-- createMockElement
+- gbNaming.js
 - quantumPanel.js
 - README.md
 - Security Policy
@@ -163,10 +163,10 @@
 - Debugging Workflow
 - City Invested
 - Game Origin
-- Scheduler
+- great-buildings-options.test.mjs
 - Scripting
 - logger.js
-- gb-place-table-rows.test.mjs
+- ref_node_url
 - View State
 - MetadataResolver
 - RPC
@@ -284,9 +284,10 @@
 - City Invested
 - Game Origin
 - Guild Members
-- EmissaryService
-- bonusPanel.js
-- 2. Enforced Conventions (Do Not Regress)
+- EmissaryService.js
+- renderLiveCityStats.js
+- date.js
+- incidentsPanel.js
 - gbg-province-view.test.mjs
 - TreasuryState
 - GuildExpedition
@@ -294,39 +295,39 @@
 - escapeHTML
 - GuildBattlegroundsEngineering
 - Sniping
-- entity-lookup-logging.test.mjs
+- content-bridge-logging.test.mjs
 - ServeGraph
 - panelResize.js
 - HelperModernization
-- BlueGalaxyState
+- GuildRaidsService
 - InventoryService
 - package-extension.js
 - GBGreatBuildingsGroundTruth
 - render-bindings.test.mjs
 - PvP
-- createLogger
+- toBigNumber
 - Core Focus Areas
 - DOM Manipulation
 - GuildDomainState.js
 - Core Focus Areas
-- record-live-rpc.mjs
-- ref_node_url
-- runtimeLifecycle.js
+- createGreatBuildingsService
+- ref_node_module
+- indexUiBindings.js
 - verify-icon-font.py
 - GuildBattlegroundSignals
-- OutpostState
+- CityDomainState.js
 - Debuggability Rules
 - guild-battleground-guards.test.mjs
 - NoUnescapedHtmlInterpolation
-- DOM Mocking
+- container-binding.test.mjs
 - TypeScript Config
 - BattlegroundCopy
 - I18NCompliance
-- src_js_utils_intakepolicy_foe_game_host
+- collapseToggleRunner.js
 - saveCurrentSettings
 - FoE-Info Extension — Modern Standards Review TODO
 - RenderGalaxyPanel
-- Big Number Precision
+- Rule: BigNumber Arithmetic Precision
 - Workspace Structure
 - icons-subset.test.mjs
 - KeyIntegrity
@@ -337,17 +338,17 @@
 - Commit Script
 - Pre-Commit
 - Pre-Push
-- playerScoreResolver.js
+- 12. Whole-Source Precision — Resolved by the Candidate Tier (2026-09-27)
 - startup-city-stats-aggregator.test.mjs
 - liveCityStatsCalculator.js
-- debugToggle.js
+- guild-battleground-panels.test.mjs
 - NoHardcodedText
-- search
-- goodsClassification.js
+- 4. Memory & Runtime Robustness
+- eraMapping.js
 - IncidentState
-- LICENSE.md
+- themeManager.js
 - engines
-- unescaped-html-interpolation.test.mjs
+- Core Focus Areas
 - Parsing and Logging
 - Query Analysis
 - lint-staged
@@ -365,10 +366,10 @@
 - Presentation Layer
 - Judge Rule Bank
 - Source Auditing
-- gbDonationPlaceEvaluator.js
+- bignumber.js
 - Post Checkout
 - Post Commit
-- live-city-view-data-builder.test.mjs
+- guild-expedition-trial.test.mjs
 - Kronik Pillow Projects
 - Kronik Pillow Projects
 - Kronik Pillow Projects
@@ -376,7 +377,7 @@
 - Kronik Pillow Projects
 - Kronik Pillow Projects
 - Kronik Pillow Projects
-- panel-dispatcher.test.mjs
+- audit-fix-mode.test.mjs
 - Kronik Pillow Projects
 - Kronik Pillow Projects
 - Kronik Pillow Projects
@@ -384,23 +385,56 @@
 - Kronik Pillow Projects
 - Kronik Pillow Projects
 - Kronik Pillow Projects
+- MessagePriorityManager
+- gb-donation-formatters.test.mjs
 - Kronik Pillow Projects
 - Kronik Pillow Projects
-- Bonus
-- Kronik Pillow Projects
-- Kronik Pillow Projects
-- Kronik Pillow Projects
-- Kronik Pillow Projects
-- Kronik Pillow Projects
+- gb-four-implementation-parity.test.mjs
 - Kronik Pillow Projects
 - Kronik Pillow Projects
 - Kronik Pillow Projects
 - Kronik Pillow Projects
+- gbg-leaderboard-handler.test.mjs
 - Kronik Pillow Projects
 - Kronik Pillow Projects
+- Kronik Pillow Projects
+- quantum-render-binding.test.mjs
+- Kronik Pillow Projects
+- FoE-Info Extension — Software Architecture
+- Kronik Pillow Projects
+- Kronik Pillow Projects
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_calc_bluegalaxycalculator_gettopreadygalaxybuildings
+- Kronik Pillow Projects
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_fn_livenameresolver_backfillpendingnames
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_msg_greatbuildingsservice_creategreatbuildingsservice
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_msg_registerservices_registerallservices
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_msg_startupservice_createstartupservice
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_protocol_gameversiontracker_getgameversion
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_protocol_gameversiontracker_notifygameversionchange
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_protocol_gameversiontracker_setgameversion
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_protocol_legacybridge_registerlegacybridge
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_state_citydomainstate_bluegalaxystate
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_state_citydomainstate_city
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_state_greatbuildingdomainstate_greatbuildingsstate
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_state_startuprenderstate_startuprenderstate
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_date_formattime
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_escape_escapehtml
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_advancedispatchgeneration
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_currentdispatchgeneration
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_evaluatedispatchtoken
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_evaluaterequestorigin
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_foe_cdn_metadata_hosts
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_foe_game_host
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_game_api_path_prefixes
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_isfoenetworkurl
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_nextdispatchsequence
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_resetdispatchordering
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_stampnextdispatchtoken
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_intakepolicy_syncdispatchgeneration
+- var_home_kronikpillow_projects_foe_info_foe_info_extension_src_js_utils_logger_createlogger
 
 ## God Nodes (most connected - your core abstractions)
-1. `createLogger()` - 90 edges
+1. `createLogger()` - 92 edges
 2. `MessageDispatcher` - 59 edges
 3. `MetadataStore` - 55 edges
 4. `bignumber.js` - 54 edges
@@ -408,33 +442,33 @@
 6. `scripts` - 41 edges
 7. `MetadataStore` - 33 edges
 8. `setCollapse()` - 32 edges
-9. `startupService()` - 26 edges
-10. `escapeHTML()` - 24 edges
+9. `escapeHTML()` - 27 edges
+10. `startupService()` - 26 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `🐛 Bug Fixes & Stability` --references--> `bonusService`  [INFERRED]
-  CHANGELOG.md → src/js/msg/BonusService.js
-- `1. InnoGames RPC Protocol & Envelope Structure` --references--> `CityProductionService`  [INFERRED]
-  .agents/references/foe/game-data-protocol.md → src/js/msg/CityProductionService.js
-- `🐛 Bug Fixes & Stability` --references--> `CityProductionService`  [INFERRED]
-  CHANGELOG.md → src/js/msg/CityProductionService.js
-- `4. Memory & Runtime Robustness` --references--> `MessageDispatcher`  [INFERRED]
-  docs/TODO.md → src/js/protocol/MessageDispatcher.js
-- `5. Dynamic InnoGames RPC Schemas` --references--> `GreatBuildingRegistry`  [INFERRED]
-  .agents/references/foe/great-buildings-engineering.md → src/types/state.d.ts
+- `9. Verification Snapshot (v3 review, 2026-09-26)` --references--> `postPlayerToSS()`  [INFERRED]
+  docs/TODO.md → src/js/fn/post.js
+- `5. Error Handling & Fallbacks` --references--> `OutpostService`  [INFERRED]
+  .agents/references/foe/cultural-settlements.md → src/js/msg/OutpostService.js
+- `11. Whole-Source Audit Findings (added 2026-09-26)` --references--> `walkJs()`  [INFERRED]
+  docs/TODO.md → .agents/scripts/judge-harness.mjs
+- `12. Whole-Source Precision — Resolved by the Candidate Tier (2026-09-27)` --references--> `auditSource()`  [INFERRED]
+  docs/TODO.md → .agents/scripts/judge-harness.mjs
+- `🐛 Bug Fixes & Stability` --references--> `isPositionSafe()`  [INFERRED]
+  CHANGELOG.md → src/js/calc/InvestedCalculator.js
 
 ## Import Cycles
 - None detected.
 
-## Communities (388 total, 186 thin omitted)
+## Communities (421 total, 203 thin omitted)
 
 ### Community 0 - "collapse.js"
-Cohesion: 0.06
-Nodes (73): fCollapseBonus, fCollapseBuildings, fCollapseClipboard, fCollapseCultural, fCollapseFriends, fCollapseGalaxy, fCollapseGoods, fCollapseGuild (+65 more)
+Cohesion: 0.12
+Nodes (37): logger, collapseArmy, collapseBattleground, collapseBuildingCost, collapseDonation, collapseExpedition, collapseGBDonors, collapseGBGLeaderboard (+29 more)
 
-### Community 1 - "date.js"
-Cohesion: 0.07
-Nodes (50): Date & JS, {
+### Community 1 - "storageListener.js"
+Cohesion: 0.17
+Nodes (21): {
   applyWorldConfig,
   applyGlobalSettings,
   applyLegacyWorldFallbacks,
@@ -444,11 +478,11 @@ Nodes (50): Date & JS, {
   hydrateLookupDefinitions,
   hydrateCityEntitiesFromSnapshot,
   hydrateCityEntitiesFromChange,
-}, initStorageListeners(), logger (+42 more)
+}, initStorageListeners(), logger, registeredDeps (+13 more)
 
 ### Community 2 - "ui/renderCityStats.js"
-Cohesion: 0.07
-Nodes (57): src_js_calc_prod_dailyproductionaidcalculator_isentityaided, src_js_calc_prod_dailyproductionaidcalculator_isentitymotivatable, ERA_ORDER, getEraAcronym(), set(), updateShowOptions(), copyTextToClipboard(), formatStatsText() (+49 more)
+Cohesion: 0.08
+Nodes (54): src_js_calc_prod_dailyproductionaidcalculator_isentityaided, src_js_calc_prod_dailyproductionaidcalculator_isentitymotivatable, ERA_ORDER, getEraAcronym(), copyTextToClipboard(), formatStatsText(), handleCopyStats(), bindPopoverElementEvents() (+46 more)
 
 ### Community 3 - "utils/storage.js"
 Cohesion: 0.07
@@ -470,8 +504,8 @@ Cohesion: 0.10
 Nodes (31): bindGuildBattlegroundPanels(), buildBattlegroundResultCardHTML(), buildBuildingCostCardHTML(), buildBuildingCostsTableHTML(), buildingCostCopy(), buildResultOptions(), buildTargetParams(), collapse (+23 more)
 
 ### Community 7 - "OutpostService"
-Cohesion: 0.09
-Nodes (15): 1. The 7 Cultural Settlements & Ground Truth, 2. Minigame Solvers & Probability Engines, 3. Advancement Trees & Timed Chest Forecasting, 4. RPC Services & Data Routing, 5. Error Handling & Fallbacks, Core Focus Areas, Few-Shot Reasoning Example: Feudal Japan Negotiation Candidate Pruning, Settlements Expert Knowledge (+7 more)
+Cohesion: 0.15
+Nodes (5): 4. RPC Services & Data Routing, 1. InnoGames RPC Protocol & Envelope Structure, isSettlementActive(), OutpostService, Settlement
 
 ### Community 8 - "options.js"
 Cohesion: 0.12
@@ -487,24 +521,24 @@ Nodes (28): { createLogger }, detectActiveGameTab(), detectActiveWorld(), discov
 }, initOptions(), isOptionsFormValid() (+20 more)
 
 ### Community 9 - "resourcePanel.js"
-Cohesion: 0.11
+Cohesion: 0.10
 Nodes (22): bindCollapseAndResize(), bindDismiss(), bindResourcePanel(), buildGoodsRows(), clearGoodsPanel(), collapse, { createLogger }, disconnectGoodsResize() (+14 more)
 
 ### Community 10 - "generate-agent-catalogs.mjs"
-Cohesion: 0.07
+Cohesion: 0.06
 Nodes (39): agentDocsRoot, agentMirrors(), agentRows(), agentsDocument(), agentsFile, atomicWrite(), CANONICAL_WORKSPACE, CHECK_ONLY (+31 more)
 
 ### Community 11 - "MetadataService.js"
 Cohesion: 0.12
-Nodes (23): getEntityId(), processCityEntity(), defaultState, handleBattlegroundBuilding(), handleBattlegroundMap(), IGNORED_CLASSES, ingestBattlegroundBuildingMetadata(), ingestBattlegroundMapMetadata() (+15 more)
+Nodes (22): getEntityId(), processCityEntity(), defaultState, handleBattlegroundBuilding(), handleBattlegroundMap(), IGNORED_CLASSES, ingestBattlegroundBuildingMetadata(), ingestBattlegroundMapMetadata() (+14 more)
 
 ### Community 12 - "greatBuildingsPanel.js"
-Cohesion: 0.06
-Nodes (33): collapse, copy, { createLogger }, dateUtils, defaultShowOptions, element, { escapeHTML }, src_js_ui_greatbuildingspanel_fcheckoutput (+25 more)
+Cohesion: 0.10
+Nodes (22): collapse, copy, { createLogger }, dateUtils, defaultShowOptions, element, { escapeHTML }, src_js_ui_greatbuildingspanel_fcheckoutput (+14 more)
 
 ### Community 13 - "networkListener.js"
-Cohesion: 0.07
-Nodes (52): isRelevantRequest(), getGameVersion(), notifyGameVersionChange(), resetGameVersion(), setGameVersion(), activeDeps, detectAndSyncWorldOrigin(), {
+Cohesion: 0.12
+Nodes (34): isRelevantRequest(), getGameVersion(), notifyGameVersionChange(), resetGameVersion(), setGameVersion(), activeDeps, detectAndSyncWorldOrigin(), {
   GAME_API_PATH_PREFIXES,
   FOE_GAME_HOST,
   FOE_CDN_METADATA_HOSTS,
@@ -517,7 +551,7 @@ Nodes (52): isRelevantRequest(), getGameVersion(), notifyGameVersionChange(), re
   advanceDispatchGeneration,
   syncDispatchGeneration,
   resetDispatchOrdering,
-} (+44 more)
+} (+26 more)
 
 ### Community 14 - "calc/VisitedCityStatsCalculator.js"
 Cohesion: 0.08
@@ -528,47 +562,36 @@ Cohesion: 0.07
 Nodes (26): addLink(), bFiles, CAPTURE_DOMAIN_DIRS, CAPTURE_RPC_DIR, CAPTURE_VISITS_DIR, __dirname, ENTITIES_DIR, entityIdSet (+18 more)
 
 ### Community 17 - "package.json"
-Cohesion: 0.07
-Nodes (27): description, displayName, license, name, private, sideEffects, type, version (+19 more)
+Cohesion: 0.08
+Nodes (26): description, displayName, license, name, private, sideEffects, type, version (+18 more)
 
 ### Community 18 - "Ingest HARS"
 Cohesion: 0.10
 Nodes (29): decodeContent(), __dirname, DOMAIN_DESCRIPTIONS, DOMAIN_ROUTES, ensureDir(), ENTITIES_DIR, EXTRACTS_DIR, __filename (+21 more)
 
-### Community 19 - "MetadataStore"
-Cohesion: 0.06
-Nodes (4): 5. Architecture & Technical Design, Console Debugging (`logger.js`), Cross-Context Synchronization, MetadataStore
-
 ### Community 20 - "entityProductionParser.js"
-Cohesion: 0.11
-Nodes (27): isEntityAided(), isEntityMotivatable(), {
+Cohesion: 0.09
+Nodes (33): isEntityAided(), isEntityMotivatable(), isNonGoodKey(), isSpecialGood(), NON_GOODS_KEYS, SPECIAL_GOODS, {
   addPlayerResources,
   addGuildResources,
   applyGenericRewardToResult,
-}, { createLogger }, logger, parseEntityMetadataProduction(), { toBigNumber }, {
-  addPlayerResources,
-  addGuildResources,
-} (+19 more)
+}, { createLogger } (+25 more)
 
 ### Community 21 - "GreatBuildingsService.js"
-Cohesion: 0.09
-Nodes (32): { calculateArcReward }, City, collapse, copy, createGreatBuildingsService(), localContributeForgePoints(), localGetConstruction(), localGetConstructionRanking() (+24 more)
+Cohesion: 0.07
+Nodes (27): gbDonationService, { calculateArcReward }, City, collapse, src_js_msg_greatbuildingsservice_contributeforgepoints, copy, defaultGreatBuildingsService, defaultState (+19 more)
 
 ### Community 22 - "Resource Service"
 Cohesion: 0.13
 Nodes (19): { createLogger, isDebugEnabled }, defaultState, exportsObj, getPlayerResources(), getResourceDefinition(), getResourceDefinitions(), loadResourceDefs(), lockGoodsPanel() (+11 more)
 
-### Community 23 - "indexUiBindings.js"
-Cohesion: 0.09
-Nodes (26): { applyCardVisibility }, { bindNetworkBridge }, {
+### Community 23 - "ui-element-bindings.test.mjs"
+Cohesion: 0.17
+Nodes (12): initIndexUiBindings(), bindOptionsButton(), bindThemeToggle(), bindWindowMessageListener(), { createLogger }, logger, {
   bindOptionsButton,
   bindWindowMessageListener,
   bindThemeToggle,
-}, {
-  bindRuntimeLifecycle,
-  onRequested,
-  onError,
-}, bindStorageListeners(), bootstrapExtensionUi(), buildStorageDeps(), { createLogger } (+18 more)
+}, __dirname (+4 more)
 
 ### Community 24 - "Dev Dependencies"
 Cohesion: 0.07
@@ -587,10 +610,10 @@ Cohesion: 0.07
 Nodes (26): { allyService }, { armyUnitManagementService }, { autoAidService }, { boostService }, { castleSystemService }, { cityMapService }, { cityProductionService }, { conversationService } (+18 more)
 
 ### Community 28 - "rpcRouter.js"
-Cohesion: 0.12
+Cohesion: 0.11
 Nodes (13): combinedHandlerMembers, { createLogger, isDebugEnabled }, getBrowserStorage(), IGNORED_RPC_CLASSES, initIgnoredRpcState(), isIgnoredRpcClass(), logRpcMessage(), rpcLog (+5 more)
 
-### Community 29 - "GreatBuildingsState"
+### Community 29 - "GreatBuildingDomainState.js"
 Cohesion: 0.09
 Nodes (4): GbDonationState, GreatBuildingDomainState, GreatBuildingsState, InvestedState
 
@@ -599,19 +622,19 @@ Cohesion: 0.08
 Nodes (25): action, default_popup, content_scripts, content_security_policy, extension_pages, description, devtools_page, homepage_url (+17 more)
 
 ### Community 31 - "helper.js"
-Cohesion: 0.06
-Nodes (42): AGE_TO_LEVEL, ERA_ABBREVIATIONS, fAgefromLevel(), fEraAbbreviation(), src_js_calc_eramapping_fgvgagesname, fLevelfromAge(), LEVEL_TO_AGE, src_js_calc_eramapping_numages (+34 more)
+Cohesion: 0.09
+Nodes (23): src_js_calc_eramapping_fgvgagesname, src_js_calc_eramapping_numages, fResourceShortName(), src_js_fn_i18n_translatecontainer, Goods, ResourceNames, url, {
+  escapeHTML,
+  escapeHTMLAttribute,
+  toDisplayString,
+} (+15 more)
 
-### Community 32 - "ref_node_assert"
-Cohesion: 0.04
-Nodes (13): ref_node_assert, ref_node_test, City, createFreshCityState(), {
-  createGalaxyCandidate,
-  filterAndSortGalaxyCandidates,
-  updateCandidateState,
-}, getCityState(), resetCityState(), createMockDom() (+5 more)
+### Community 32 - "ref_node_test"
+Cohesion: 0.10
+Nodes (4): ref_node_test, buildLiveCityViewData(), createMockDOM(), PANEL_DISPATCHER_FILES
 
 ### Community 33 - "cardVisibility.js"
-Cohesion: 0.13
+Cohesion: 0.11
 Nodes (22): applyCardVisibility(), applyContextVisibility(), applyUnconstrainedVisibility(), {
   GAME_CONTEXTS,
   CONTEXT_ALLOWED_PANELS,
@@ -624,13 +647,13 @@ Nodes (22): applyCardVisibility(), applyContextVisibility(), applyUnconstrainedV
   ALL_KNOWN_PANEL_IDS,
 }, getAllowedPanelsForView(), getCurrentView(), normalizeContext(), setCurrentView() (+14 more)
 
-### Community 34 - "armyPanel.js"
-Cohesion: 0.13
-Nodes (11): ArmyState, { armyState }, bindArmyPanel(), collapse, { createLogger }, disconnectArmyResize(), element, helper (+3 more)
+### Community 34 - "ArmyUnitManagementService.js"
+Cohesion: 0.06
+Nodes (22): { armyState }, armyUnitManagementService(), ArmyUnits, clearArmyUnits(), { createLogger }, defaultState, ERA_LEVELS, exportsObj (+14 more)
 
 ### Community 35 - "renderBindings.js"
-Cohesion: 0.10
-Nodes (24): bindGalaxyRender(), bindGbDonationPanels(), bindGreatBuildingsPanels(), bindIncidentPanels(), { bindArmyPanel }, { bindBonusPanel }, { bindExpeditionPanel }, { bindGalaxyRender } (+16 more)
+Cohesion: 0.09
+Nodes (22): bindGbDonationPanels(), bindGreatBuildingsPanels(), { bindArmyPanel }, { bindBonusPanel }, { bindExpeditionPanel }, { bindGalaxyRender }, { bindGbDonationPanels }, { bindGreatBuildingsPanels } (+14 more)
 
 ### Community 36 - "bignumberUtils.js"
 Cohesion: 0.16
@@ -662,33 +685,33 @@ Cohesion: 0.10
 Nodes (19): copy-webpack-plugin, css-minimizer-webpack-plugin, html-webpack-plugin, mini-css-extract-plugin, terser-webpack-plugin, webpack, webpack-merge, CopyPlugin (+11 more)
 
 ### Community 41 - "devtools.js"
-Cohesion: 0.16
-Nodes (18): 2.2 Message bridges, webextension-polyfill, bufferEntry(), deliverEntry(), devtoolsLogger, flushPending(), forwardOrBufferEntry(), pendingEntries (+10 more)
+Cohesion: 0.17
+Nodes (18): 2.2 Message bridges, bufferEntry(), deliverEntry(), devtoolsLogger, flushPending(), forwardOrBufferEntry(), pendingEntries, createHostMessageHandler() (+10 more)
 
 ### Community 42 - "ConversationService.js"
-Cohesion: 0.07
-Nodes (28): collapse, conversationService(), dateUtils, element, { escapeHTML }, extractRateFromTitle(), formatTimeSafe(), getConversation() (+20 more)
+Cohesion: 0.19
+Nodes (18): collapse, conversationService(), dateUtils, element, { escapeHTML }, extractRateFromTitle(), formatTimeSafe(), getConversation() (+10 more)
 
 ### Community 43 - "playerTooltip.js"
-Cohesion: 0.14
-Nodes (19): 4. Memory & Runtime Robustness, attachWsListener(), dispatchWsText(), isFoeWebSocketUrl(), trustedHostMatches(), formatPlayerLabel(), getScoreDBOrigin(), getUserTooltipHTML() (+11 more)
+Cohesion: 0.18
+Nodes (14): formatPlayerLabel(), getScoreDBOrigin(), getUserTooltipHTML(), ignoredPlayers, isStaleNegative(), isTransientStatus(), normalizeIgnoreListData(), pendingScoreDBFetches (+6 more)
 
 ### Community 44 - "state/state.js"
 Cohesion: 0.10
-Nodes (5): checkDebug(), removeDebug(), toggleDebug(), updatePlayerNameCache(), onDebugToggle()
+Nodes (4): removeDebug(), toggleDebug(), onDebugToggle(), toggleDebug()
 
 ### Community 45 - "TreasuryService"
-Cohesion: 0.11
-Nodes (7): 1. InnoGames RPC Protocol & Envelope Structure, BigNumber, { messageDispatcher }, showOptions, TreasuryLogEntry, TreasuryService, { treasuryState }
+Cohesion: 0.09
+Nodes (9): BigNumber, { messageDispatcher }, showOptions, TreasuryLogEntry, TreasuryService, { treasuryState }, BUNDLE_PATH, require (+1 more)
 
 ### Community 46 - "CastleSystemService"
-Cohesion: 0.12
+Cohesion: 0.11
 Nodes (6): getCastleBoostsForEntity(), getCastleBoostsForStage(), STAGE_BOOST_MAP, CastleSystemService, {
   getCastleBoostsForStage,
 }, { messageDispatcher }
 
 ### Community 47 - "SocialState"
-Cohesion: 0.12
+Cohesion: 0.11
 Nodes (3): SocialDomainState, SocialState, VisitedCityState
 
 ### Community 48 - "License Terms"
@@ -696,20 +719,25 @@ Cohesion: 0.11
 Nodes (19): 0. Definitions., 10. Automatic Licensing of Downstream Recipients., 11. Patents., 12. No Surrender of Others' Freedom., 13. Remote Network Interaction; Use with the GNU General Public License., 14. Revised Versions of this License., 15. Disclaimer of Warranty., 16. Limitation of Liability. (+11 more)
 
 ### Community 49 - "js/index.js"
-Cohesion: 0.08
-Nodes (25): src_css_main, src_js_fn_rewardrenderer_rewardobserve, src_js_fn_rewardrenderer_showreward, containers, battlegroundDIV, donation2DIV, donationDIV, donationDIV2 (+17 more)
+Cohesion: 0.07
+Nodes (26): webextension-polyfill, src_css_main, src_js_fn_rewardrenderer_rewardobserve, src_js_fn_rewardrenderer_showreward, containers, battlegroundDIV, donation2DIV, donationDIV (+18 more)
 
 ### Community 51 - "MetadataStore.js"
-Cohesion: 0.16
-Nodes (11): indexEntityAliases(), isDebugEnabled(), isEntityEqual(), peekEntity(), reportEntityLookup(), createLegacyCityEntityProxy(), RELATION_PROPERTIES, { createLegacyCityEntityProxy } (+3 more)
+Cohesion: 0.18
+Nodes (10): indexEntityAliases(), isDebugEnabled(), isEntityEqual(), peekEntity(), reportEntityLookup(), createLegacyCityEntityProxy(), { createLegacyCityEntityProxy }, {
+  isEntityEqual,
+  indexEntityAliases,
+  peekEntity,
+  reportEntityLookup,
+} (+2 more)
 
 ### Community 52 - "startupService"
-Cohesion: 0.19
-Nodes (21): boostServiceAllBoosts(), buildClanGoodsData(), coordinateStartupEntities(), createStartupService(), handleBoostServiceAllBoosts(), lastStartupMsg(), renderBuildingCollectionTimes(), renderLiveCityStats() (+13 more)
+Cohesion: 0.16
+Nodes (23): boostServiceAllBoosts(), buildClanGoodsData(), coordinateStartupEntities(), createStartupService(), ensureCitystatsContainer(), fEntityName(), handleBoostServiceAllBoosts(), lastStartupMsg() (+15 more)
 
 ### Community 54 - ".agents/scripts/judge-harness.mjs"
-Cohesion: 0.10
-Nodes (20): boolOf(), choiceOf(), confOf(), DETERMINISTIC_RULE_IDS, DIFF_PHRASES, DOMAIN_REPOS, evidenceAll(), evidenceFor() (+12 more)
+Cohesion: 0.09
+Nodes (18): boolOf(), CANDIDATE_RECALL, CANDIDATE_RULE_IDS, choiceOf(), confOf(), DETERMINISTIC_RULE_IDS, DIFF_PHRASES, DOMAIN_REPOS (+10 more)
 
 ### Community 55 - "Tool Options"
 Cohesion: 0.17
@@ -717,7 +745,7 @@ Nodes (14): toolOptions, cityrewards, rewardsArmy, rewardsCity, rewardsGeneric, 
 
 ### Community 56 - "OtherPlayerService.js"
 Cohesion: 0.11
-Nodes (12): checkInactivePlunder(), { createLogger }, friends, guildMembers, hoodlist, logger, otherPlayerService(), register() (+4 more)
+Nodes (14): checkInactivePlunder(), { createLogger }, friends, guildMembers, hoodlist, logger, otherPlayerService(), resolveMissingCityEntities() (+6 more)
 
 ### Community 57 - "Trade Service"
 Cohesion: 0.15
@@ -740,20 +768,20 @@ Cohesion: 0.12
 Nodes (10): args, candidatePaths, __dirname, __filename, graph, inEdges, neighbors, nodeMap (+2 more)
 
 ### Community 62 - "indexBridgeSetup.js"
-Cohesion: 0.12
-Nodes (16): registerAllServices(), { messageDispatcher }, dispatcherLogger, setupIndexBridge(), registerLegacyBridge(), GBselected, getPlayerName(), MyInfo (+8 more)
+Cohesion: 0.16
+Nodes (13): dispatcherLogger, setupIndexBridge(), GBselected, getPlayerName(), MyInfo, playerNameCache, setPlayerName(), updatePlayerNameCache() (+5 more)
 
 ### Community 63 - "FriendsTavernService"
 Cohesion: 0.14
 Nodes (3): FriendsTavernService, { messageDispatcher }, OtherTavernState
 
-### Community 64 - "HiddenRewardService"
-Cohesion: 0.14
-Nodes (3): HiddenReward, HiddenRewardService, { messageDispatcher }
+### Community 64 - "domain-services-city.test.mjs"
+Cohesion: 0.08
+Nodes (8): HiddenReward, HiddenRewardService, { messageDispatcher }, { messageDispatcher }, CULTURAL_GOODS_MAP, exportsObj, { messageDispatcher }, { outpostState }
 
 ### Community 65 - "gbDonationPanel.js"
-Cohesion: 0.13
-Nodes (20): attachGbDonationPanelEvents(), bindDonationEvents(), buildClassicDonationHeader(), collapse, element, { escapeHTML }, evaluateGbDonationPlaces(), formatPlaceOrdinal() (+12 more)
+Cohesion: 0.15
+Nodes (25): attachGbDonationPanelEvents(), buildCardFooter(), checkInactive(), collapse, copy, element, { escapeHTML }, evaluateGbDonationPlaces() (+17 more)
 
 ### Community 66 - "investedPanel.js"
 Cohesion: 0.16
@@ -763,8 +791,8 @@ Nodes (14): bindInvestedPanel(), cachedContributions, { calculateInvestments }, 
 Cohesion: 0.12
 Nodes (18): ref_fs, ref_path, ref_url, findFiles(), htmlFiles, findFiles(), jsFiles, CONCURRENCY (+10 more)
 
-### Community 68 - "domain-services-city.test.mjs"
-Cohesion: 0.12
+### Community 68 - "AllyService.js"
+Cohesion: 0.15
 Nodes (7): 2. Room Compatibility & Placement Solver, AllyService, AssignedAlly, BigNumber, createBoostMatrix(), KNOWN_FEATURES, { messageDispatcher }
 
 ### Community 69 - "subset-icons-font.mjs"
@@ -772,10 +800,8 @@ Cohesion: 0.17
 Nodes (11): findIconNames(), FONT, FONT_DIR, jsFiles(), MANIFEST, names, pct, ROOT (+3 more)
 
 ### Community 70 - "galaxyPanel.js"
-Cohesion: 0.09
-Nodes (22): backfillPendingNames(), formatLiveName(), { metadataStore }, { onMetadataUpdated }, resolveLiveName(), { backfillPendingNames }, bindGalaxyCollapseEvents(), {
-  blueGalaxyState: defaultBlueGalaxyState,
-} (+14 more)
+Cohesion: 0.10
+Nodes (19): backfillPendingNames(), formatLiveName(), { metadataStore }, { onMetadataUpdated }, resolveLiveName(), { backfillPendingNames }, bindGalaxyCollapseEvents(), bindGalaxyRender() (+11 more)
 
 ### Community 72 - "Audit References"
 Cohesion: 0.07
@@ -790,15 +816,15 @@ Cohesion: 0.19
 Nodes (8): CityMapService, defaultGbRegistry, defaultState, extractGridId(), GbDonationService, { messageDispatcher }, registerCityEntities(), setCurrentView()
 
 ### Community 75 - "panelDispatcher.js"
-Cohesion: 0.31
-Nodes (10): clearCultural(), clearElement(), clearExpedition(), clearForBattleground(), clearForMainCity(), clearStartup(), clearVisitPlayer(), panelDispatcher (+2 more)
+Cohesion: 0.23
+Nodes (12): clearCultural(), clearElement(), clearExpedition(), clearForBattleground(), clearForMainCity(), clearStartup(), clearVisitPlayer(), panelDispatcher (+4 more)
 
-### Community 76 - "MessageDispatcher.js"
-Cohesion: 0.09
-Nodes (14): { messageDispatcher }, { quantumState }, executeBatchDispatch(), DedupCache, { decodeBody, parsePayload }, { DedupCache }, { executeBatchDispatch }, { executeRawDispatch } (+6 more)
+### Community 76 - "ref_node_assert"
+Cohesion: 0.10
+Nodes (14): ref_node_assert, guildBattlegroundService, { messageDispatcher }, executeBatchDispatch(), registerLegacyBridge(), { decodeBody, parsePayload }, { DedupCache }, { executeBatchDispatch } (+6 more)
 
 ### Community 78 - "treasuryPanel.js"
-Cohesion: 0.17
+Cohesion: 0.18
 Nodes (14): bindTreasuryEvents(), bindTreasuryPanel(), buildTreasuryTableHtml(), clearElement(), clearForTreasury(), { createLogger }, defaultExport, disconnectTreasuryResize() (+6 more)
 
 ### Community 79 - "TSConfig"
@@ -806,12 +832,12 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, allowJs, checkJs, esModuleInterop, lib, module, moduleResolution, resolveJsonModule (+5 more)
 
 ### Community 80 - "rpc-contract.mjs"
-Cohesion: 0.10
-Nodes (20): analyzeContract(), args, asJson, CAPTURED_FILE, collectRegisteredKeys(), CONFIG_FILE, __dirname, __filename (+12 more)
+Cohesion: 0.11
+Nodes (18): analyzeContract(), args, asJson, CAPTURED_FILE, collectRegisteredKeys(), CONFIG_FILE, __dirname, __filename (+10 more)
 
-### Community 81 - "bignumber.js"
-Cohesion: 0.16
-Nodes (18): bignumber.js, applyBoost(), BigNumber, finalizeUnaidedList(), recalculateAidStatsBoosts(), recordUnaided(), { toBigNumber }, BigNumber (+10 more)
+### Community 81 - "DailyProductionAidCalculator.js"
+Cohesion: 0.21
+Nodes (15): applyBoost(), BigNumber, finalizeUnaidedList(), recalculateAidStatsBoosts(), recordUnaided(), { toBigNumber }, BigNumber, calculateDailyProductionAid() (+7 more)
 
 ### Community 82 - "UI Bindings"
 Cohesion: 0.09
@@ -826,12 +852,12 @@ Nodes (12): src_js_ui_indexuibindings_bindoptionsbutton, src_js_ui_indexuibindin
   buildStorageDeps,
 }, mockWindow (+4 more)
 
-### Community 83 - "GuildExpeditionService.js"
+### Community 83 - "registerAllServices"
 Cohesion: 0.17
-Nodes (8): { expeditionState }, {
+Nodes (11): register(), register(), { expeditionState }, {
   extractTrialLevel,
   extractInternationalExpeditionEntries,
-}, guildExpeditionService(), register(), resetExpeditionCache(), extractInternationalExpeditionEntries(), extractTrialLevel(), createMockDOM()
+}, guildExpeditionService(), register(), register(), register() (+3 more)
 
 ### Community 84 - "TargetGenerator"
 Cohesion: 0.17
@@ -841,9 +867,13 @@ Nodes (12): src_js_ui_gbgpanel_buildtargetgeneratortargets, src_js_ui_gbgpanel_s
 Cohesion: 0.21
 Nodes (9): isDirectMetadataUrl(), parseMetadataUrlContext(), routeDirectMetadata(), { correlateRequestPayload }, executeRawDispatch(), { extractRequestPayload }, { routeDirectMetadata }, extractRequestPayload() (+1 more)
 
+### Community 86 - "QuestService"
+Cohesion: 0.12
+Nodes (5): Quest, QuestService, set(), updateShowOptions(), src_js_utils_storage_onworldsettingschange
+
 ### Community 87 - "post.js"
-Cohesion: 0.13
-Nodes (14): 0. Legacy References, Product Boundary & Credential Scope, External Publication & Enrichment, GBGdata, logToDiscord(), MyInfo, postAlerttoDsicord(), postData(), postTargetGenToDiscord() (+6 more)
+Cohesion: 0.12
+Nodes (16): 0. Legacy References, Product Boundary & Credential Scope, bootstrap, External Publication & Enrichment, GBGdata, logToDiscord(), MyInfo, postAlerttoDsicord(), postData() (+8 more)
 
 ### Community 88 - "Combat Boosts"
 Cohesion: 0.10
@@ -853,37 +883,37 @@ Nodes (20): 1. The Multi-Context Boost Matrix, 2. Military Unit Dynamics & Count
 Cohesion: 0.22
 Nodes (11): src_js_calc_utils_gbnames_getgreatbuildingname, getSelfContribution(), BigNumber, calculateLevelCost(), gbRegistry, getGreatBuilding(), { getGreatBuildingName }, metadataStorePkg (+3 more)
 
-### Community 92 - "StartupRenderState"
-Cohesion: 0.12
-Nodes (6): { City }, { createLogger }, emissaryServiceInstance, logger, { startupRenderState }, StartupRenderState
+### Community 90 - "BonusState"
+Cohesion: 0.09
+Nodes (7): BonusState, bindBonusPanel(), { bonusState }, collapse, { createLogger }, element, logger
 
 ### Community 93 - "el"
-Cohesion: 0.18
-Nodes (3): el, syncClassName(), name()
+Cohesion: 0.12
+Nodes (11): COMMON_HTML_TAGS, createMockDocument(), createMockElement(), el, matchNode(), search(), syncClassName(), setupMockChrome() (+3 more)
 
 ### Community 94 - "Globals"
 Cohesion: 0.28
 Nodes (11): saveSize(), setArmySize(), setBattlegroundSize(), setBuildingCostSize(), setExpeditionSize(), setFriendsSize(), setGoodsSize(), setLogsSize() (+3 more)
 
-### Community 95 - "ref_node_child_process"
-Cohesion: 0.05
-Nodes (31): ref_node_child_process, ref_node_os, prettier, FULL, ROOT, AGENTS_DIR, CONFIG_FILE, ENV_SCRIPT (+23 more)
+### Community 95 - "mcp-profile.test.mjs"
+Cohesion: 0.08
+Nodes (20): ref_node_os, prettier, ACTIVE_PORT_FILES, GAME_URL, main(), record(), resolveEndpoint(), AGENTS_DIR (+12 more)
 
 ### Community 96 - "RewardState"
-Cohesion: 0.24
+Cohesion: 0.23
 Nodes (3): RewardState, bindRewardPanel(), { rewardState }
 
 ### Community 97 - "ref_node_fs"
-Cohesion: 0.07
-Nodes (22): ref_node_fs, ref_node_path, AGENTS_DIR, PROJECT_ROOT, SCRIPT_DIR, ROOT, walk(), root (+14 more)
+Cohesion: 0.08
+Nodes (19): ref_node_fs, ref_node_path, AGENTS_DIR, PROJECT_ROOT, SCRIPT_DIR, ROOT, walk(), root (+11 more)
 
-### Community 98 - "toBigNumber"
-Cohesion: 0.13
-Nodes (24): 5. Architecture & JS Modernization, computeEconomicScore(), createGalaxyCandidate(), DEFAULT_ECONOMIC_WEIGHTS, extractEntityFp(), { extractEntityProduction }, filterAndSortGalaxyCandidates(), getTopReadyGalaxyBuildings() (+16 more)
+### Community 98 - "BlueGalaxyCalculator.js"
+Cohesion: 0.22
+Nodes (11): computeEconomicScore(), createGalaxyCandidate(), DEFAULT_ECONOMIC_WEIGHTS, extractEntityFp(), { extractEntityProduction }, filterAndSortGalaxyCandidates(), getTopReadyGalaxyBuildings(), isCandidateReady() (+3 more)
 
 ### Community 100 - "auditSource"
-Cohesion: 0.27
-Nodes (12): auditRules(), auditSource(), domainQuestions(), judgeAll(), ruleApplies(), ruleStates(), sourceStates(), violations() (+4 more)
+Cohesion: 0.23
+Nodes (15): auditRules(), auditSource(), domainQuestions(), evidenceAll(), evidenceFor(), ruleStates(), sh(), sourceStates() (+7 more)
 
 ### Community 101 - "[0.0.833] - 2026-09-11"
 Cohesion: 0.12
@@ -894,16 +924,20 @@ Cohesion: 0.15
 Nodes (13): Always required, Building, Commands & Verification Pipeline, Core Principles & Invariants, Debugging, FoE-Info, Installing the Extension, License (+5 more)
 
 ### Community 103 - "GbDonationService.js"
-Cohesion: 0.11
-Nodes (18): { calculateSafeSpots }, extractRankingLevel(), extractRankingParams(), gbDonationService, { gbDonationState }, handleNewReward(), register(), showOptions (+10 more)
+Cohesion: 0.19
+Nodes (10): { calculateSafeSpots }, extractRankingLevel(), extractRankingParams(), { gbDonationState }, handleNewReward(), register(), showOptions, syncGbSelected() (+2 more)
 
 ### Community 104 - "BonusService.js"
-Cohesion: 0.18
-Nodes (8): bonusAmount(), bonusService, getLimitedBonuses(), logger, register(), resolveShowOptions(), src_js_vars_showoptions_showoptions, src_js_vars_state_bonus
+Cohesion: 0.14
+Nodes (11): bonusAmount(), bonusService, getLimitedBonuses(), logger, register(), Bonus, resolveShowOptions(), src_js_vars_showoptions_showoptions (+3 more)
 
-### Community 106 - "ArmyUnitManagementService.js"
-Cohesion: 0.13
-Nodes (13): { armyState }, armyUnitManagementService(), ArmyUnits, clearArmyUnits(), { createLogger }, defaultState, ERA_LEVELS, exportsObj (+5 more)
+### Community 105 - "cityPanelToggles.js"
+Cohesion: 0.08
+Nodes (25): fCollapseBonus, fCollapseBuildings, fCollapseClipboard, fCollapseCultural, fCollapseFriends, fCollapseGalaxy, fCollapseGoods, fCollapseGuild (+17 more)
+
+### Community 106 - "ref_node_child_process"
+Cohesion: 0.10
+Nodes (12): ref_node_child_process, FULL, ROOT, AGENTS_DIR, CONFIG_FILE, ENV_SCRIPT, MODEL_SCRIPT, PROJECT_ROOT (+4 more)
 
 ### Community 107 - "check-version.mjs"
 Cohesion: 0.16
@@ -923,23 +957,27 @@ Nodes (9): CityEntityInstance, GameEntityDefinition, GoodsInventory, GreatBuildi
 
 ### Community 111 - "socialPanel.js"
 Cohesion: 0.12
-Nodes (17): 🏛️ Modular Architecture & Monolith Deconstruction, bindVisitedCityRender(), collapse, copy, { createLogger }, element, { escapeHTML, formatShieldCountdown }, src_js_ui_socialpanel_formatshieldcountdown (+9 more)
+Nodes (18): 🏛️ Modular Architecture & Monolith Deconstruction, bindSocialLists(), bindVisitedCityRender(), collapse, copy, { createLogger }, element, { escapeHTML, formatShieldCountdown } (+10 more)
 
 ### Community 112 - "cdp.mjs"
-Cohesion: 0.20
-Nodes (24): devtools://devtools/bundled/ui/legacy/legacy.js, closeNonFoeDevTools(), ensureDevToolsOnFoeTab(), fetchTargets(), findFoeDevTools(), main(), reloadExtension(), sendCdp() (+16 more)
+Cohesion: 0.19
+Nodes (23): closeNonFoeDevTools(), ensureDevToolsOnFoeTab(), fetchTargets(), findFoeDevTools(), main(), reloadExtension(), sendCdp(), sleep() (+15 more)
 
 ### Community 113 - "utils/i18n.js"
 Cohesion: 0.29
 Nodes (14): 7. Perf / Build / A11y / i18n, initOptionsI18n(), collectI18nElements(), dictionaries, getLocale(), I18N_ATTRIBUTES, loadAll(), loadLocale() (+6 more)
 
 ### Community 114 - "startupPanel.js"
-Cohesion: 0.16
-Nodes (11): bindStartupMetadataLoading(), bindStartupRenderState(), buildingCollection, cityStatsTooltips, { escapeHTML: canonicalEscapeHTML }, liveStats, playerTooltip, renderMetadataLoadingPlaceholder() (+3 more)
+Cohesion: 0.18
+Nodes (10): bindStartupMetadataLoading(), buildingCollection, cityStatsTooltips, { escapeHTML: canonicalEscapeHTML }, liveStats, playerTooltip, renderMetadataLoadingPlaceholder(), safeEscape() (+2 more)
 
 ### Community 115 - "GreatBuildingCalculator.js"
-Cohesion: 0.24
-Nodes (18): Named call sites, BigNumber, calculateArcReward(), calculateDonorOutcome(), calculateLevelClosingProfit(), calculateOwnerSafeAdd(), calculateSafeSpots(), calculateSpotLock() (+10 more)
+Cohesion: 0.33
+Nodes (14): Named call sites, BigNumber, calculateArcReward(), calculateDonorOutcome(), calculateLevelClosingProfit(), calculateOwnerSafeAdd(), calculateSafeSpots(), calculateSpotLock() (+6 more)
+
+### Community 116 - "MessageDispatcher"
+Cohesion: 0.09
+Nodes (3): DedupCache, MessageDispatcher, BODY
 
 ### Community 117 - "domain-services-social.test.mjs"
 Cohesion: 0.12
@@ -976,28 +1014,28 @@ Cohesion: 0.25
 Nodes (8): 1. Store Listing Metadata, 2. Permissions Justification, 3. Host Permissions Justification, 4. Privacy & Data Use Disclosure, 5. Store Assets & Visual Checklist, 6. Version History, Chrome Web Store Listing & Compliance: FoE-Info, `v0.0.834` (Current)
 
 ### Community 125 - "FoE-Info Debugging & Diagnostic Infrastructure"
-Cohesion: 0.33
-Nodes (6): 1. Operating Modes Overview, 2. Header Toggle Mechanism, 3. Filterable Console Tags Cheat-Sheet, 4. Out-of-Scope RPC Log Filtering, 5. AI Pair-Debugging Workflow, FoE-Info Debugging & Diagnostic Infrastructure
+Cohesion: 0.25
+Nodes (8): 1. Operating Modes Overview, 2. Header Toggle Mechanism, 3. Filterable Console Tags Cheat-Sheet, 4. Out-of-Scope RPC Log Filtering, 5. AI Pair-Debugging Workflow, 5. Architecture & Technical Design, Cross-Context Synchronization, FoE-Info Debugging & Diagnostic Infrastructure
 
 ### Community 126 - "validate-commit-msg.mjs"
 Cohesion: 0.33
 Nodes (7): BANNED_SLOP_WORDS, FILLER_ADVERBS, isExemptBodyLine(), NON_IMPERATIVE_WORDS, TEMPLATE_PHRASES, VALID_TYPES, validateCommitMessage()
 
-### Community 127 - "createMockElement"
-Cohesion: 0.27
-Nodes (9): __dirname, __filename, ROOT_DIR, COMMON_HTML_TAGS, createMockDocument(), createMockElement(), setupMockChrome(), setupMockDOM() (+1 more)
+### Community 127 - "gbNaming.js"
+Cohesion: 0.16
+Nodes (14): fArcname(), fCFname(), fGBname(), fGBsname(), GB_FALLBACK_NAMES, GB_NAME_MAP, GB_SHORT_NAMES, getGreatBuildingName() (+6 more)
 
 ### Community 128 - "quantumPanel.js"
-Cohesion: 0.18
-Nodes (15): applyContributionsSizing(), applyLeaderboardSizing(), bindQuantumPanels(), { escapeHTML }, getWorldLabel(), { quantumState }, renderQuantumContributionsCard(), renderQuantumLeaderboardCard() (+7 more)
+Cohesion: 0.24
+Nodes (11): applyContributionsSizing(), applyLeaderboardSizing(), { escapeHTML }, getWorldLabel(), { quantumState }, renderQuantumContributionsCard(), renderQuantumLeaderboardCard(), showOptions (+3 more)
 
 ### Community 129 - "README.md"
 Cohesion: 0.22
-Nodes (4): Architectural Layers, Core Data Pipeline, FoE-Info Extension — Software Architecture, Non-Negotiable Architectural Invariants
+Nodes (3): GNU AFFERO GENERAL PUBLIC LICENSE, How to Apply These Terms to Your New Programs, Preamble
 
 ### Community 130 - "Security Policy"
-Cohesion: 0.15
-Nodes (12): 1. DevTools network listener, 2. MAIN-world content-script bridge, Data Intake Paths, Data Retention, Page-Spoofable Messages, Permissions & CSP Rationale, Product Boundary, Reporting a Vulnerability (+4 more)
+Cohesion: 0.18
+Nodes (10): 1. DevTools network listener, 2. MAIN-world content-script bridge, Data Intake Paths, Data Retention, Permissions & CSP Rationale, Product Boundary, Reporting a Vulnerability, Security Policy (+2 more)
 
 ### Community 131 - "applySignalAction"
 Cohesion: 0.20
@@ -1016,9 +1054,13 @@ Nodes (11): clearSignals(), extractSignalData(), getSignals(), removeSignal(), s
   setSignal,
 }, CONSTRUCTION, DESTRUCTION (+3 more)
 
+### Community 136 - "GreatBuildingRegistry"
+Cohesion: 0.11
+Nodes (10): 1. Arc Boost Multiplier & Precision Reward Math, 2. Safe Spot Position Lock Formulas, 3. Leveling Progression & FP Bank Forecasting, 4. Prestige Tiers & Multiplicative Combat GBs, 5. Dynamic InnoGames RPC Schemas, 6. Implementation Guidance (Portable), Core Focus Areas, Few-Shot Reasoning Example: Contested Spot Lock Calculation (+2 more)
+
 ### Community 137 - "player-score-resolution.test.mjs"
 Cohesion: 0.16
-Nodes (12): otherPlayerServiceUpdateActions(), { createLogger }, extractPlayerPoints(), parseUserAccount(), setMyScore(), __dirname, FIXTURES_DIR, otherPlayerSrc (+4 more)
+Nodes (13): otherPlayerServiceUpdateActions(), { createLogger }, extractPlayerPoints(), parseUserAccount(), { createLogger }, loadStoredScore(), logger, resolvePlayerScore() (+5 more)
 
 ### Community 138 - "Q: Does whole-tree source auditing (auditSource) work with the judge?"
 Cohesion: 0.50
@@ -1048,21 +1090,21 @@ Nodes (3): Answer, Outcome, Q: Why is whole-source auditing untrustworthy, and w
 Cohesion: 0.50
 Nodes (4): AI Pair-Debugging Workflow, Debug Mode, Filterable Console Tags Cheat-Sheet, Header Icon Toggle Mechanism
 
-### Community 147 - "Scheduler"
-Cohesion: 0.80
-Nodes (3): getSchedulerApi(), postBackgroundTask(), yieldToMain()
+### Community 147 - "great-buildings-options.test.mjs"
+Cohesion: 0.13
+Nodes (12): buildGenericRewardHtml(), { createLogger }, logger, renderGenericReward(), content, createElement(), createMockElement(), dataModule() (+4 more)
 
 ### Community 148 - "Scripting"
 Cohesion: 0.67
 Nodes (3): allowScripts, core-js@3.50.0, @parcel/watcher@2.6.0
 
 ### Community 149 - "logger.js"
-Cohesion: 0.33
-Nodes (7): syncDebug(), defaultLogger, getBrowserStorage(), initDebugState(), setDebugEnabled(), subscribers, toggleDebug()
+Cohesion: 0.20
+Nodes (12): logger, SETTERS, syncDebug(), createLogger(), defaultLogger, getBrowserStorage(), initDebugState(), setDebugEnabled() (+4 more)
 
-### Community 150 - "gb-place-table-rows.test.mjs"
-Cohesion: 0.38
-Nodes (10): buildCardFooter(), checkInactive(), copy, gbTabEmpty(), gbTabNotSafe(), gbTabSafe(), getDonations_new(), getPlayerLink() (+2 more)
+### Community 150 - "ref_node_url"
+Cohesion: 0.12
+Nodes (11): ref_node_url, BANNED_PATTERNS, calcDir, listCalcFiles(), isEsmSource(), load(), here, root (+3 more)
 
 ### Community 152 - "MetadataResolver"
 Cohesion: 0.28
@@ -1077,27 +1119,35 @@ Cohesion: 0.27
 Nodes (9): candidates(), DEFAULT_STORE, hydrate(), INCIDENTAL, lineFor(), loadIndex(), metadataStates(), specificName() (+1 more)
 
 ### Community 165 - "ui/AddElement.js"
-Cohesion: 0.22
-Nodes (4): fAddCollapseIcon(), fCollapseIcon(), fSyncTriggerState(), storage
+Cohesion: 0.08
+Nodes (17): 1. Baseline Policy, 2. Enforced Conventions (Do Not Regress), Accessibility, Forms (Options Page), Performance, Rule: FoE-Info Modern Web Conventions, Security & CSP, Theming & CSS (+9 more)
 
 ### Community 172 - "StartupService.js"
 Cohesion: 0.05
-Nodes (45): src_js_msg_resourceservice_resourcedefs, {
+Nodes (43): src_js_msg_resourceservice_resourcedefs, {
   addResourceTotal,
   boostedForgePoints,
   toBigNumber,
 }, { applyBoostsToCity }, { blueGalaxyState }, {
   buildClanGoodsData: buildClanGoodsDataImpl,
   fGoodsHTML,
-}, buildingsReady, { City }, clanGoodsBuildings (+37 more)
+}, buildingsReady, { City }, clanGoodsBuildings (+35 more)
 
-### Community 273 - "bonusPanel.js"
-Cohesion: 0.18
-Nodes (6): bindBonusPanel(), { bonusState }, collapse, { createLogger }, element, logger
-
-### Community 274 - "2. Enforced Conventions (Do Not Regress)"
+### Community 272 - "EmissaryService.js"
 Cohesion: 0.20
-Nodes (9): 1. Baseline Policy, 2. Enforced Conventions (Do Not Regress), Accessibility, Forms (Options Page), Performance, Rule: FoE-Info Modern Web Conventions, Security & CSP, Theming & CSS (+1 more)
+Nodes (7): { City }, { createLogger }, EmissaryService, emissaryServiceInstance, logger, { startupRenderState }, City
+
+### Community 273 - "renderLiveCityStats.js"
+Cohesion: 0.20
+Nodes (12): ref_node_vm, BigNumber, buildClanGoodsData(), fGoodsHTML(), fGoodsText(), { toBigNumber }, tr(), BigNumber (+4 more)
+
+### Community 274 - "date.js"
+Cohesion: 0.29
+Nodes (14): Date & JS, activeConfig, DATE_PRESETS, formatDate(), formatDateTime(), formatInTimeZone(), formatPattern(), formatRelativeTime() (+6 more)
+
+### Community 275 - "incidentsPanel.js"
+Cohesion: 0.25
+Nodes (11): bindIncidentPanels(), buildIncidentMarkup(), buildIncidentTooltip(), fIncidentName(), fShowIncidents(), INCIDENT_LOOKUP, { incidentState }, renderCloseButton() (+3 more)
 
 ### Community 276 - "gbg-province-view.test.mjs"
 Cohesion: 0.25
@@ -1112,7 +1162,7 @@ Cohesion: 0.18
 Nodes (10): 1. System Structure & Cycle Schedule, 2. The Quantum Settlement Economy & Development, 3. Quantum Actions & Quantum Shards Mechanics, 4. Quantum Map Mechanics & Encounter Types, 5. Combat Mechanics & Boost Rules, 6. Main City Expansions (Quantum Medals), 7. Reward Ecosystem & Top "Neo" Buildings Ranking, Authoritative Game Domain Knowledge (+2 more)
 
 ### Community 280 - "escapeHTML"
-Cohesion: 0.13
+Cohesion: 0.12
 Nodes (17): appendGameVersionStatus(), { escapeHTML }, buildLeaderboardHTML(), { escapeHTML }, renderBuildingCollectionTimes(), collapse, element, { escapeHTML } (+9 more)
 
 ### Community 281 - "GuildBattlegroundsEngineering"
@@ -1122,6 +1172,10 @@ Nodes (9): 1. System Structure, Seasons & Map Topologies, 2. Map Expansion & Sec
 ### Community 282 - "Sniping"
 Cohesion: 0.20
 Nodes (9): 1. Sniping Mathematics & Profit Calculation, 2. Reconnaissance & Target Scanning, 3.1 GB Donation Terminology Glossary, 3. Anti-Snipe Protection (Defensive Advisor), 4. Alerting & Webhook Dispatches, 5. Implementation Guidance (Portable), Core Focus Areas, Few-Shot Reasoning Example: Snipe Opportunity Evaluation (+1 more)
+
+### Community 283 - "content-bridge-logging.test.mjs"
+Cohesion: 0.33
+Nodes (3): Page-Spoofable Messages, postMessage(), source
 
 ### Community 284 - "ServeGraph"
 Cohesion: 0.24
@@ -1136,8 +1190,8 @@ Cohesion: 0.24
 Nodes (7): createMockElement(), helperSource, helperUrl, isEsmSource(), load(), MODULE_STUBS, noop()
 
 ### Community 288 - "InventoryService"
-Cohesion: 0.08
-Nodes (14): 1. Arc Boost Multiplier & Precision Reward Math, 2. Safe Spot Position Lock Formulas, 3. Leveling Progression & FP Bank Forecasting, 4. Prestige Tiers & Multiplicative Combat GBs, 5. Dynamic InnoGames RPC Schemas, 6. Implementation Guidance (Portable), Core Focus Areas, Few-Shot Reasoning Example: Contested Spot Lock Calculation (+6 more)
+Cohesion: 0.12
+Nodes (4): BigNumber, GreatBuildingInventoryEntry, InventoryItem, InventoryService
 
 ### Community 289 - "package-extension.js"
 Cohesion: 0.20
@@ -1151,9 +1205,12 @@ Nodes (7): BLUEPRINT_REWARD, CITY_ENTITY, CONSTRUCTION, CONTRIBUTE, OVERVIEW, PA
 Cohesion: 0.25
 Nodes (7): 1. PvP Arena Matchmaking & Combat Tiers, 2. Defensive Army Configuration, 3. Neighborhood Combat & Plundering Dynamics, 4. Implementation Guidance (Portable), Core Focus Areas, Few-Shot Reasoning Example: PvP Attempt Regeneration, Pvp Expert Knowledge
 
-### Community 293 - "createLogger"
+### Community 293 - "toBigNumber"
 Cohesion: 0.11
-Nodes (20): BigNumber, buildClanGoodsData(), fGoodsHTML(), fGoodsText(), { toBigNumber }, tr(), AGES, showTooltips() (+12 more)
+Nodes (21): 5. Architecture & JS Modernization, addGuildResources(), addResource(), applyGenericReward(), applyProductionBoosts(), BigNumber, extractEntityProduction(), {
+  toBigNumber,
+  boostedForgePoints,
+} (+13 more)
 
 ### Community 294 - "Core Focus Areas"
 Cohesion: 0.22
@@ -1164,24 +1221,32 @@ Cohesion: 0.32
 Nodes (3): createElement(), createMockElement(), getElementById()
 
 ### Community 296 - "GuildDomainState.js"
-Cohesion: 0.16
-Nodes (3): ExpeditionState, GuildDomainState, bindExpeditionPanel()
+Cohesion: 0.08
+Nodes (7): { messageDispatcher }, { quantumState }, ExpeditionState, GuildDomainState, QuantumState, memberContributionsFixture, rankingsFixture
 
 ### Community 297 - "Core Focus Areas"
 Cohesion: 0.29
 Nodes (6): 1. Historical Allies Metadata & Payload Truth, 3. Error Handling & Edge Cases, 4. Implementation Guidance & Performance, Core Focus Areas, Few-Shot Reasoning Example: Ally Room Matching Solver, Historical Allies Expert Knowledge
 
-### Community 298 - "record-live-rpc.mjs"
-Cohesion: 0.38
-Nodes (5): ACTIVE_PORT_FILES, GAME_URL, main(), record(), resolveEndpoint()
+### Community 298 - "createGreatBuildingsService"
+Cohesion: 0.28
+Nodes (13): createGreatBuildingsService(), localContributeForgePoints(), localGetConstruction(), localGetConstructionRanking(), localRegister(), localShowGreatBuldingDonation(), localSyncRankingPayload(), extractRankingData() (+5 more)
 
-### Community 299 - "ref_node_url"
-Cohesion: 0.05
-Nodes (26): ref_node_module, ref_node_url, logger, SETTERS, isEsmSource(), load(), isEsmSource(), load() (+18 more)
+### Community 299 - "ref_node_module"
+Cohesion: 0.10
+Nodes (13): eslint, ref_node_module, isEsmSource(), load(), isEsmSource(), load(), require, linter (+5 more)
 
-### Community 300 - "runtimeLifecycle.js"
-Cohesion: 0.36
-Nodes (5): bindRuntimeLifecycle(), { createLogger }, logger, onError(), onRequested()
+### Community 300 - "indexUiBindings.js"
+Cohesion: 0.13
+Nodes (18): { applyCardVisibility }, { bindNetworkBridge }, {
+  bindOptionsButton,
+  bindWindowMessageListener,
+  bindThemeToggle,
+}, {
+  bindRuntimeLifecycle,
+  onRequested,
+  onError,
+}, bootstrapExtensionUi(), buildStorageDeps(), { createLogger }, { escapeHTML } (+10 more)
 
 ### Community 301 - "verify-icon-font.py"
 Cohesion: 0.32
@@ -1190,6 +1255,14 @@ Nodes (7): fonttools_ttlib, char(), main(), Fail unless every icon name still re
 ### Community 302 - "GuildBattlegroundSignals"
 Cohesion: 0.38
 Nodes (4): createElement(), createMockElement(), domStore, getElementById()
+
+### Community 303 - "CityDomainState.js"
+Cohesion: 0.17
+Nodes (6): CityDomainState, createFreshCityState(), {
+  createGalaxyCandidate,
+  filterAndSortGalaxyCandidates,
+  updateCandidateState,
+}, getCityState(), OutpostState, resetCityState()
 
 ### Community 304 - "Debuggability Rules"
 Cohesion: 0.33
@@ -1203,7 +1276,7 @@ Nodes (4): isEsmSource(), load(), malformedPayloads, MODULE_STUBS
 Cohesion: 0.27
 Nodes (9): baseline(), BASELINE_PATH, create(), inspect(), DATA_LEAVES, fs, isUnescapedDataRead(), path (+1 more)
 
-### Community 307 - "DOM Mocking"
+### Community 307 - "container-binding.test.mjs"
 Cohesion: 0.40
 Nodes (5): createMockDOM(), createElement(), __dirname, __filename, ROOT_DIR
 
@@ -1219,19 +1292,23 @@ Nodes (4): src_js_utils_formatters_escapehtml, createElement(), createMockElemen
 Cohesion: 0.40
 Nodes (4): 1. Template Localization, 2. Dynamic JavaScript Rendering, 3. Key Synchronization, Rule: Internationalization (i18n) Compliance
 
+### Community 311 - "collapseToggleRunner.js"
+Cohesion: 0.29
+Nodes (11): { createLogger }, createToggle(), executeToggle(), getBootstrap(), getElement(), getStorage(), hideAllTooltips(), logger (+3 more)
+
 ### Community 312 - "saveCurrentSettings"
 Cohesion: 0.39
 Nodes (6): saveCurrentSettings(), CHECKBOX_CONFIG, readGlobalSettingsFromForm(), readWorldSettingsFromForm(), createMockElement(), setupMockDOM()
 
 ### Community 313 - "FoE-Info Extension — Modern Standards Review TODO"
-Cohesion: 0.15
-Nodes (14): 12. Whole-Source Precision — Resolved by the Candidate Tier (2026-09-27), 1. Unblock Gates & Repo Hygiene `[v2]`, 2.1 Network intake and panel HTML, 2.3 External posting and credentials, 2.4 Manifest & policy, 6. Quality Toolchain, 8. Execution Order (v3), 9. Verification Snapshot (v3 review, 2026-09-26) (+6 more)
+Cohesion: 0.20
+Nodes (9): 1. Unblock Gates & Repo Hygiene `[v2]`, 2.1 Network intake and panel HTML, 2.3 External posting and credentials, 2.4 Manifest & policy, 6. Quality Toolchain, 8. Execution Order (v3), 9. Verification Snapshot (v3 review, 2026-09-26), FoE-Info Extension — Modern Standards Review TODO (+1 more)
 
 ### Community 314 - "RenderGalaxyPanel"
 Cohesion: 0.50
 Nodes (3): createMockElement(), getElementById(), querySelectorAll()
 
-### Community 315 - "Big Number Precision"
+### Community 315 - "Rule: BigNumber Arithmetic Precision"
 Cohesion: 0.50
 Nodes (3): Rounding hybrid, Rule: BigNumber Arithmetic Precision, Type discipline
 
@@ -1247,42 +1324,41 @@ Nodes (6): FONT, FONT_DIR, jsFiles(), MANIFEST, root, usedIconNames()
 Cohesion: 0.40
 Nodes (5): CANONICAL, collectSourceFiles(), collectUsedKeys(), ROOT, SCAN_DIRS
 
-### Community 327 - "playerScoreResolver.js"
-Cohesion: 0.50
-Nodes (4): { createLogger }, loadStoredScore(), logger, resolvePlayerScore()
+### Community 327 - "12. Whole-Source Precision — Resolved by the Candidate Tier (2026-09-27)"
+Cohesion: 0.24
+Nodes (10): auditCandidates(), candidateQuestions(), candidateStates(), isComment(), judgeAll(), planCandidateAudit(), ruleApplies(), 12. Whole-Source Precision — Resolved by the Candidate Tier (2026-09-27) (+2 more)
 
 ### Community 328 - "startup-city-stats-aggregator.test.mjs"
 Cohesion: 0.83
 Nodes (3): baseArgs(), createHelper(), createTooltipHTML()
 
-### Community 330 - "debugToggle.js"
-Cohesion: 0.60
-Nodes (3): applyDebugA11y(), createDebugLogo(), tr()
+### Community 330 - "guild-battleground-panels.test.mjs"
+Cohesion: 0.24
+Nodes (7): createElement(), createMockElement(), __dirname, domStore, __filename, getElementById(), ROOT_DIR
 
 ### Community 331 - "NoHardcodedText"
 Cohesion: 0.26
 Nodes (10): baseline(), BASELINE_PATH, create(), inspect(), reportHits(), fs, isMarkup(), path (+2 more)
 
-### Community 333 - "goodsClassification.js"
-Cohesion: 0.39
-Nodes (6): isNonGoodKey(), isSpecialGood(), NON_GOODS_KEYS, SPECIAL_GOODS, require, {
-  SPECIAL_GOODS,
-  NON_GOODS_KEYS,
-  isSpecialGood,
-  isNonGoodKey,
-}
+### Community 332 - "4. Memory & Runtime Robustness"
+Cohesion: 0.36
+Nodes (5): 4. Memory & Runtime Robustness, attachWsListener(), dispatchWsText(), isFoeWebSocketUrl(), trustedHostMatches()
 
-### Community 335 - "LICENSE.md"
-Cohesion: 0.50
-Nodes (3): GNU AFFERO GENERAL PUBLIC LICENSE, How to Apply These Terms to Your New Programs, Preamble
+### Community 333 - "eraMapping.js"
+Cohesion: 0.31
+Nodes (6): AGE_TO_LEVEL, ERA_ABBREVIATIONS, fAgefromLevel(), fEraAbbreviation(), fLevelfromAge(), LEVEL_TO_AGE
+
+### Community 335 - "themeManager.js"
+Cohesion: 0.44
+Nodes (6): applyTheme(), getTheme(), initTheme(), isDarkMode(), resolveTheme(), updateThemeState()
 
 ### Community 336 - "engines"
 Cohesion: 0.67
 Nodes (3): engines, node, npm
 
-### Community 337 - "unescaped-html-interpolation.test.mjs"
-Cohesion: 0.29
-Nodes (5): eslint, linter, require, ROOT, rule
+### Community 337 - "Core Focus Areas"
+Cohesion: 0.25
+Nodes (7): 1. The 7 Cultural Settlements & Ground Truth, 2. Minigame Solvers & Probability Engines, 3. Advancement Trees & Timed Chest Forecasting, 5. Error Handling & Fallbacks, Core Focus Areas, Few-Shot Reasoning Example: Feudal Japan Negotiation Candidate Pruning, Settlements Expert Knowledge
 
 ### Community 339 - "Query Analysis"
 Cohesion: 0.50
@@ -1344,29 +1420,57 @@ Nodes (3): Answer, Outcome, Q: Does the judge rule bank match the current .agent
 Cohesion: 0.50
 Nodes (3): Answer, Outcome, Q: Does whole-tree source auditing (auditSource) work with the judge?
 
-### Community 355 - "gbDonationPlaceEvaluator.js"
+### Community 355 - "bignumber.js"
+Cohesion: 0.22
+Nodes (8): bignumber.js, BigNumber, fDonationSuggest(), getPlaceValues(), getSafe(), GreatBuildingCalculator, aggregateLiveGoods(), BigNumber
+
+### Community 358 - "guild-expedition-trial.test.mjs"
+Cohesion: 0.25
+Nodes (3): resetExpeditionCache(), bindExpeditionPanel(), createMockDOM()
+
+### Community 366 - "audit-fix-mode.test.mjs"
+Cohesion: 0.25
+Nodes (4): LOCALES, REAL_I18N, ROOT, SCRIPT
+
+### Community 375 - "gb-donation-formatters.test.mjs"
 Cohesion: 0.33
-Nodes (5): BigNumber, fDonationSuggest(), getPlaceValues(), getSafe(), GreatBuildingCalculator
+Nodes (5): bindDonationEvents(), buildClassicDonationHeader(), getDonations(), getFriendlyDonation(), src_js_ui_gbdonationpanel_getsafe
+
+### Community 378 - "gb-four-implementation-parity.test.mjs"
+Cohesion: 0.47
+Nodes (5): Appendix — Corrections to v1/v2, captured, forgeHammerDonor(), original(), r2()
+
+### Community 383 - "gbg-leaderboard-handler.test.mjs"
+Cohesion: 0.40
+Nodes (3): isEsmSource(), load(), MODULE_STUBS
+
+### Community 387 - "quantum-render-binding.test.mjs"
+Cohesion: 0.60
+Nodes (4): bindQuantumPanels(), createElement(), createMockElement(), getElementById()
+
+### Community 389 - "FoE-Info Extension — Software Architecture"
+Cohesion: 0.50
+Nodes (4): Architectural Layers, Core Data Pipeline, FoE-Info Extension — Software Architecture, Non-Negotiable Architectural Invariants
 
 ## Knowledge Gaps
-- **1365 isolated node(s):** `name`, `displayName`, `version`, `private`, `description` (+1360 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 2152 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **186 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **1364 isolated node(s):** `__filename`, `__dirname`, `ROOT_DIR`, `ENTITIES_DIR`, `RPC_DIR` (+1359 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 2160 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **203 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `bignumber.js` connect `bignumber.js` to `ui/renderCityStats.js`, `calc/VisitedCityStatsCalculator.js`, `package.json`, `panel-resize-and-visibility.test.mjs`, `entityProductionParser.js`, `InventoryService`, `ref_node_assert`, `bignumberUtils.js`, `createLogger`, `TreasuryService`, `Trade Service`, `gbDonationPanel.js`, `domain-services-city.test.mjs`, `liveCityStatsCalculator.js`, `treasuryPanel.js`, `Combat Boosts`, `great-buildings-unified.test.mjs`, `toBigNumber`, `gbDonationPlaceEvaluator.js`, `live-city-view-data-builder.test.mjs`, `state.d.ts`, `panel-dispatcher.test.mjs`, `GreatBuildingCalculator.js`, `domain-services-social.test.mjs`, `InvestedCalculator.js`?**
-  _High betweenness centrality (0.067) - this node is a cross-community bridge._
-- **Why does `createLogger()` connect `createLogger` to `collapse.js`, `date.js`, `ui/renderCityStats.js`, `quantumPanel.js`, `expeditionPanel.js`, `options.js`, `player-score-resolution.test.mjs`, `resourcePanel.js`, `greatBuildingsPanel.js`, `networkListener.js`, `calc/VisitedCityStatsCalculator.js`, `bonusPanel.js`, `Scheduler`, `entityProductionParser.js`, `GreatBuildingsService.js`, `Resource Service`, `logger.js`, `MetadataResolver`, `escapeHTML`, `GuildBattlegroundService.js`, `indexUiBindings.js`, `rpcRouter.js`, `panelResize.js`, `helper.js`, `ref_node_assert`, `armyPanel.js`, `bignumberUtils.js`, `GbgSignalService.js`, `GuildDomainState.js`, `devtools.js`, `ConversationService.js`, `ref_node_url`, `StartupService.js`, `runtimeLifecycle.js`, `CastleSystemService`, `SocialState`, `Tool Options`, `OtherPlayerService.js`, `Trade Service`, `indexBridgeSetup.js`, `playerScoreResolver.js`, `CityMapService.js`, `panelDispatcher.js`, `MessageDispatcher.js`, `treasuryPanel.js`, `GuildExpeditionService.js`, `rawDispatchPipeline.js`, `post.js`, `Combat Boosts`, `StartupRenderState`, `RewardState`, `toBigNumber`, `BonusService.js`, `ArmyUnitManagementService.js`, `CityProductionService.js`, `outpostPanel.js`, `socialPanel.js`, `startupPanel.js`, `GreatBuildingCalculator.js`, `EntityDefsCache`, `InvestedCalculator.js`, `Network Bridge`, `StorageBootstrap`?**
-  _High betweenness centrality (0.066) - this node is a cross-community bridge._
-- **Why does `Security Policy` connect `Security Policy` to `README.md`, `post.js`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
-- **What connects `name`, `displayName`, `version` to the rest of the system?**
-  _1365 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `bignumber.js` connect `bignumber.js` to `ui/renderCityStats.js`, `calc/VisitedCityStatsCalculator.js`, `package.json`, `renderLiveCityStats.js`, `entityProductionParser.js`, `ref_node_test`, `ArmyUnitManagementService.js`, `bignumberUtils.js`, `toBigNumber`, `TreasuryService`, `startupService`, `Trade Service`, `domain-services-city.test.mjs`, `gbDonationPanel.js`, `AllyService.js`, `liveCityStatsCalculator.js`, `panelDispatcher.js`, `treasuryPanel.js`, `DailyProductionAidCalculator.js`, `Combat Boosts`, `great-buildings-unified.test.mjs`, `state.d.ts`, `GreatBuildingCalculator.js`, `domain-services-social.test.mjs`, `gb-donation-formatters.test.mjs`, `InvestedCalculator.js`?**
+  _High betweenness centrality (0.092) - this node is a cross-community bridge._
+- **Why does `createLogger()` connect `logger.js` to `collapse.js`, `quantumPanel.js`, `ui/renderCityStats.js`, `expeditionPanel.js`, `options.js`, `player-score-resolution.test.mjs`, `resourcePanel.js`, `greatBuildingsPanel.js`, `networkListener.js`, `calc/VisitedCityStatsCalculator.js`, `EmissaryService.js`, `renderLiveCityStats.js`, `incidentsPanel.js`, `entityProductionParser.js`, `GreatBuildingsService.js`, `Resource Service`, `great-buildings-options.test.mjs`, `MetadataResolver`, `escapeHTML`, `GuildBattlegroundService.js`, `ui-element-bindings.test.mjs`, `rpcRouter.js`, `GreatBuildingDomainState.js`, `panelResize.js`, `ArmyUnitManagementService.js`, `bignumberUtils.js`, `GbgSignalService.js`, `toBigNumber`, `GuildDomainState.js`, `devtools.js`, `ConversationService.js`, `StartupService.js`, `indexUiBindings.js`, `CastleSystemService`, `CityDomainState.js`, `SocialState`, `collapseToggleRunner.js`, `OtherPlayerService.js`, `Trade Service`, `Tool Options`, `indexBridgeSetup.js`, `CityMapService.js`, `panelDispatcher.js`, `ref_node_assert`, `eraMapping.js`, `treasuryPanel.js`, `registerAllServices`, `rawDispatchPipeline.js`, `post.js`, `Combat Boosts`, `BonusState`, `StartupRenderState`, `RewardState`, `BlueGalaxyCalculator.js`, `BonusService.js`, `cityPanelToggles.js`, `CityProductionService.js`, `outpostPanel.js`, `socialPanel.js`, `startupPanel.js`, `GreatBuildingCalculator.js`, `MessagePriorityManager`, `EntityDefsCache`, `InvestedCalculator.js`, `Network Bridge`, `StorageBootstrap`, `gbNaming.js`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `MetadataStore` connect `MetadataStore` to `galaxyPanel.js`, `MetadataService.js`, `StartupService.js`, `state/state.js`, `calc/VisitedCityStatsCalculator.js`, `VisitedCityStatsCalculator.test.mjs`, `MetadataStore.js`, `MetadataResolver`, `Trade Service`, `GuildBattlegroundService.js`, `gbNaming.js`, `helper.js`?**
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+- **What connects `__filename`, `__dirname`, `ROOT_DIR` to the rest of the system?**
+  _1364 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `collapse.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.05960705960705961 - nodes in this community are weakly interconnected._
-- **Should `date.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.07191316146540028 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11740890688259109 - nodes in this community are weakly interconnected._
 - **Should `ui/renderCityStats.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.07042253521126761 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07638279192273925 - nodes in this community are weakly interconnected._
+- **Should `utils/storage.js` be split into smaller, more focused modules?**
+  _Cohesion score 0.06937799043062201 - nodes in this community are weakly interconnected._

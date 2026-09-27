@@ -118,11 +118,12 @@ const LAYER_ROOTS = [
   '.agents',
 ];
 
-// Sibling repositories in the domain. `docs/TODO.md` legitimately documents the
-// `peer-repo` fork and its `src/extras/` module, so those paths must be
-// verifiable too — otherwise the auditor reports correct cross-repo references
-// as unresolved. Only directories that actually exist are used, so a repo that
-// is absent locally cannot fail the check.
+// Sibling repositories in the domain. Tracked source and tests reference the
+// offline metadata store and the peer repos by path (e.g. `src/extras/index.js`
+// in the peer-repo fork), so those references must be verifiable too — otherwise
+// the auditor reports correct cross-repo references as unresolved. Only
+// directories that actually exist are used, so a repo that is absent locally
+// cannot fail the check.
 // The repository root comes first so a token that already carries its own
 // prefix (`src/extras/index.js`) resolves without doubling that prefix; the
 // narrower roots let a bare fragment (`fn/extras.js`) resolve too.
@@ -134,6 +135,37 @@ const SIBLING_ROOTS = [
   '../FoE-Info-Extension-original/src',
   '../forge-hammer/src',
 ].filter((r) => existsSync(join(ROOT, r)));
+
+// Top-level paths the repository deliberately excludes, minus the ones a
+// reader is expected to GENERATE. A token pointing into an excluded source
+// root is a reference a clone cannot resolve, so it must be reported rather
+// than dismissed by the `a.b/c` convention heuristic below. Without this,
+// de-tracking a directory makes every mention of it silently invisible: the
+// head stops being a real directory, so the token reads as a naming
+// convention and is skipped. That is how `docs/TODO.md` citations survived in
+// tracked files after the backlog stopped being tracked.
+//
+// Build outputs are excluded from the set on purpose. `build/FoE-Info-DEV` is
+// named in README and CONTRIBUTING as the unpacked-extension directory a
+// contributor produces with `npm run dev`; it is absent from every clone by
+// design, so reporting it would be noise on a correct document.
+const GENERATED_ROOTS = new Set([
+  'build',
+  'coverage',
+  'dist',
+  'node_modules',
+  'out',
+]);
+const IGNORED_ROOTS = new Set(
+  read('.gitignore')
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(
+      (l) => l && !l.startsWith('#') && (l.startsWith('/') || l.includes('/')),
+    )
+    .map((l) => l.replace(/^\//, '').split('/')[0])
+    .filter((seg) => seg && !/[*?[\]!]/.test(seg) && !GENERATED_ROOTS.has(seg)),
+);
 
 function resolveCandidates(token, file) {
   const t = token.replace(/[.,;:)]+$/, '');
@@ -159,6 +191,7 @@ function resolveCandidates(token, file) {
   const isFilePath = head.includes('.') && existsSync(join(ROOT, head));
   if (
     !isFilePath &&
+    !IGNORED_ROOTS.has(head) &&
     !existsSync(join(ROOT, head)) &&
     LAYER_ROOTS.every((r) => !existsSync(join(ROOT, r, t))) &&
     SIBLING_ROOTS.every((r) => !existsSync(join(ROOT, r, t)))
@@ -309,9 +342,9 @@ for (const f of [
   for (const m of read(f).matchAll(/\b([A-Z][A-Z0-9_]{3,})\b/g))
     envDefined.add(m[1]);
 for (const f of [
-  '.agents/scripts/inference-env.sh',
-  '.agents/scripts/graphify-model.sh',
-  '.agents/scripts/graphify.sh',
+  'scripts/graphify/inference-env.sh',
+  'scripts/graphify/graphify-model.sh',
+  'scripts/graphify/graphify.sh',
   '.agents/scripts/serve-graph.mjs',
 ])
   for (const m of read(f).matchAll(/\b([A-Z][A-Z0-9_]{3,})\b/g))

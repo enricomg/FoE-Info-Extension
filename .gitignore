@@ -45,14 +45,14 @@ __pycache__/
 # Tracked here as well, because they are the durable knowledge this repo builds:
 #   memory/      one file per saved exploration (question + verified answer)
 #   reflections/ LESSONS.md, deterministically generated from memory/ by `reflect`
-#   findings/    decisions.jsonl (the log) and decisions.md (its rendered roll-up)
+#   findings/    NOT tracked — see the agent working layer below
 graphify-out/cache/
 graphify-out/manifest.json
 graphify-out/cost.json
 graphify-out/wiki/
 graphify-out/.graphify_*
 # Derived exports are regenerable and no longer produced by default (see
-# .agents/scripts/graphify.sh: exports are opt-in via --export). They are ignored
+# scripts/graphify/graphify.sh: exports are opt-in via --export). They are ignored
 # anyway so that running `export` once cannot stage tens of megabytes of
 # wiki/, obsidian/, svg or callflow HTML.
 graphify-out/obsidian/
@@ -64,7 +64,14 @@ graphify-out/reflections/*.bak*
 # Rebuild runtime state: rewritten or removed by the post-commit hook.
 graphify-out/.pending_changes
 graphify-out/.rebuild.lock
-graphify-out/findings/*.pre-provenance-backup
+
+# Agent working layer: the review backlog and the judge decision log are
+# produced by tooling that is itself untracked (.agents/scripts/judge-harness.mjs,
+# .agents/rules/), so a reader cannot check a verdict against the rule that
+# produced it. They stay on disk and keep feeding local agents; they are not
+# part of what this repository publishes.
+docs/
+graphify-out/findings/
 
 # Agent Runtime, Harness & Workspace State (per-developer, never shared)
 /.agent
@@ -83,6 +90,10 @@ graphify-out/findings/*.pre-provenance-backup
 **/.claude/agent-memory-local
 **/.claude/first-run
 **/.claude/assistant-daemon-state.debug
+
+# Interpreter path recorded per machine by `graphify hook install`; the hooks
+# themselves are tracked, so the value has to live outside them.
+/.husky/.graphify-python
 
 .worktrees/
 

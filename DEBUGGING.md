@@ -185,5 +185,6 @@ files are read at browser start, and the toggle is per-instance, so **restart
 the browser after editing either one**.
 
 Game tabs are observed read-only: network payloads and console output are
-read, but nothing is clicked, typed, or navigated. See
-`.agents/rules/browser-environment-hygiene.md`.
+read, but nothing is clicked, typed, or navigated. Attaching a debugger is
+diagnostics; leaving the tab alone is the boundary — no automated input, no
+focus stealing, no game tab interaction.

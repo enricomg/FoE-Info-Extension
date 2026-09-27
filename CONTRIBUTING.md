@@ -45,9 +45,8 @@ Chromium-based browser for manual panel testing.
 
 ### Node.js baseline (recommended)
 
-The baseline is **Node 24.x (LTS)**, and the sources now agree on it:
+The baseline is **Node 24.x (LTS)**. Where the sources are pinned:
 
-- `AGENTS.md` — "Node 24+"
 - `package.json` `engines` — `>=24.0.0`
 - CI (`.github/workflows/ci.yml`) — Node 24.x
 - local `mise` config — 26.8.2
@@ -56,7 +55,7 @@ The baseline is **Node 24.x (LTS)**, and the sources now agree on it:
 verification snapshot was produced against. Node 26+ is an allowed-but-untested
 minor: local `mise` resolves to 26.8.2 and the suite passes there, but CI pins a
 single major. Do not widen CI to two majors as part of a docs change; that is an
-engine/CI task (`docs/TODO.md` §1, §3). A local `mise` pin newer than the
+engine/CI task, not a docs change. A local `mise` pin newer than the
 baseline is fine for development, but reproducible verification is anchored to
 24.x.
 
