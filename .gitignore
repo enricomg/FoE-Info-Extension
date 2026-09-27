@@ -38,14 +38,15 @@ temp/
 __pycache__/
 *.py[c]
 
-# Graphify — shared knowledge artifacts are tracked; local state is not.
-# Pattern follows Graphify-Labs/graphify discussion #426 (maintainer-confirmed):
-# graph.json, graph.html and GRAPH_REPORT.md are the artifacts teammates and AI
-# assistants query. manifest.json is mtime-based and invalid after a clone.
-# Tracked here as well, because they are the durable knowledge this repo builds:
+# Graphify — exactly three artifacts are tracked: graph.json (the artifact a
+# query reads), graph.html and GRAPH_REPORT.md. Everything else under
+# graphify-out/ is local, including the exploration record:
 #   memory/      one file per saved exploration (question + verified answer)
-#   reflections/ LESSONS.md, deterministically generated from memory/ by `reflect`
-#   findings/    NOT tracked — see the agent working layer below
+#   reflections/ LESSONS.md, deterministically generated from memory/
+#   findings/    the judge decision log
+# Those three are the agent working layer (below) — they are written by
+# untracked tooling, describe the unshipped `.agents/` tree, and are not a
+# shared map of this codebase.
 graphify-out/cache/
 graphify-out/manifest.json
 graphify-out/cost.json
@@ -60,7 +61,8 @@ graphify-out/graph.svg
 graphify-out/GRAPH_TREE.html
 graphify-out/*-callflow.html
 graphify-out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
-graphify-out/reflections/*.bak*
+graphify-out/memory/
+graphify-out/reflections/
 # Rebuild runtime state: rewritten or removed by the post-commit hook.
 graphify-out/.pending_changes
 graphify-out/.rebuild.lock
