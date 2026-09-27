@@ -46,6 +46,7 @@
     "rpc:contract": "node scripts/rpc-contract.mjs",
     "rpc:contract:check": "node scripts/rpc-contract.mjs --check",
     "setup": "node scripts/setup.mjs",
+    "setup:git": "node scripts/git-workflow.mjs",
     "test": "node scripts/run-tests.mjs",
     "test:verbose": "node scripts/run-tests.mjs --test-reporter=spec",
     "test:watch": "node scripts/run-tests.mjs --test-reporter=dot --watch",

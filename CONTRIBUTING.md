@@ -60,6 +60,49 @@ engine/CI task (`docs/TODO.md` §1, §3). A local `mise` pin newer than the
 baseline is fine for development, but reproducible verification is anchored to
 24.x.
 
+## Git workflow
+
+`development` is linear. It is fast-forwarded, work arrives through
+short-lived branches, and no merge commit is authored on top of it. Three
+local git settings make a plain `git pull` behave that way:
+
+| Setting             | Effect                                                                 |
+| :------------------ | :--------------------------------------------------------------------- |
+| `pull.rebase`       | `git pull` replays local commits onto the upstream instead of merging. |
+| `rebase.autoStash`  | A dirty working tree survives a `git rebase` you run by hand.          |
+| `rebase.autosquash` | `git rebase -i` folds `fixup!` / `squash!` commits into their target.  |
+
+Apply them to a clone with:
+
+```bash
+npm run setup:git
+```
+
+`npm run setup` performs the same step, so a clone that followed
+[Getting started](#getting-started) already has them. All three are written
+with `--local`: they live in that clone's `.git/config` and no other
+contributor inherits them.
+
+`fixup!` and `squash!` subjects pass the `commit-msg` hook, which is what makes
+the autosquash row above usable. Git applies `rebase.autosquash` to
+`git rebase -i` only — the non-interactive rebase behind `git pull --rebase`
+leaves those commits alone.
+
+### Rebasing and the tracked graph
+
+`graphify-out/graph.json` is marked `merge=graphify` in `.gitattributes`, so git
+resolves it with the union merge driver from `merge.graphify.driver` instead of
+as text. A rebase that replays commits touching that file needs that driver
+registered in the clone: without it git falls back to the default binary merge
+and stops on an unmerged `graphify-out/graph.json`. `graphify hook install`
+registers the driver, and `mise run setup-full` installs the toolchain that
+provides it.
+
+The husky hooks already detect a rebase in progress — they test for
+`$GIT_DIR/rebase-merge` and `$GIT_DIR/rebase-apply`, the same two directories
+git creates mid-rebase — and exit before rebuilding, so replaying a run of
+commits does not launch a graph rebuild per commit.
+
 ## Commit messages
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org/):
