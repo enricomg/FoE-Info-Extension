@@ -127,11 +127,24 @@ const LAYER_ROOTS = [
 // prefix (`src/msg/BonusService.js`) resolves without doubling that prefix;
 // the narrower `/src` roots let a bare fragment (`msg/BonusService.js`)
 // resolve too.
+//
+// LOCAL_SIBLINGS_FILE adds roots that are yours rather than the project's —
+// a private fork, a worktree, anything beside this repository whose paths your
+// notes cite. It is git-ignored, because naming a private repository in a
+// tracked file is exactly what that file exists to avoid. The format is one
+// path per line relative to the repository root, `#` for comments, so the
+// resolution behaviour is identical to a built-in root and costs a clone
+// nothing.
+const LOCAL_SIBLINGS_FILE = '.audit-siblings';
 const SIBLING_ROOTS = [
   '../FoE-Info-Extension-original',
   '../forge-hammer',
   '../FoE-Info-Extension-original/src',
   '../forge-hammer/src',
+  ...read(LOCAL_SIBLINGS_FILE)
+    .split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l && !l.startsWith('#')),
 ].filter((r) => existsSync(join(ROOT, r)));
 
 // Top-level paths the repository deliberately excludes, minus the ones a

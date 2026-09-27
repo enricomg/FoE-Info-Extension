@@ -20,7 +20,7 @@ const SCRIPT = path.join(root, 'scripts', 'audit-references.mjs');
  */
 function runAudit(files, siblings = {}) {
   // `siblings` are written NEXT TO the fixture, matching how the real script
-  // resolves `../forge-hammer` relative to its own repository root.
+  // resolves a `../<repo>` root relative to its own repository root.
   const parent = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-refs-'));
   const dir = path.join(parent, 'proj');
   fs.mkdirSync(dir, { recursive: true });
@@ -33,7 +33,7 @@ function runAudit(files, siblings = {}) {
       fs.writeFileSync(target, body);
     }
     // Sibling repositories live NEXT TO the fixture, matching how the real
-    // script resolves `../forge-hammer` relative to its own repository root.
+    // script resolves a `../<repo>` root relative to its own repository root.
     for (const [rel, body] of Object.entries(siblings)) {
       const target = path.join(parent, rel);
       fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -160,6 +160,63 @@ test('sibling-repo check: a path in a peer repo resolves, not flagged', () => {
     [],
     'a path that exists in the sibling repo must not be reported',
   );
+});
+
+test('a local sibling registered in .audit-siblings resolves, not flagged', () => {
+  // A private fork or a worktree beside this repository has paths that notes
+  // cite, and naming it in a tracked file is what the local list exists to
+  // avoid: the root comes from `.audit-siblings`, which is git-ignored. The
+  // resolution behaviour is identical to a built-in root, so this is the same
+  // capability under a name the repository does not have to carry.
+  //
+  // `src/` exists in the fixture on purpose. Without it the auditor
+  // short-circuits before trying any candidate and the assertion holds
+  // vacuously — so both directions are asserted. That is what makes it a test
+  // of sibling resolution rather than of the fixture.
+  const readme = 'The peer keeps its module at `src/extras/index.js`.\n';
+  const base = { 'README.md': readme, 'src/app.js': 'x\n' };
+  const peer = { 'peer-repo/src/extras/index.js': 'export const x = 1;\n' };
+
+  assert.ok(
+    tokens(runAudit(base, peer)).includes('src/extras/index.js'),
+    'with no root registered, the path must be reported',
+  );
+  // Assert on the token rather than on a finding `kind`: a token whose head is
+  // a real directory reports as `unresolved-path` while a bare fragment
+  // reports as `unresolved-path-fragment`, and filtering on one of the two
+  // silently matches nothing.
+  const resolved = tokens(
+    runAudit({ ...base, '.audit-siblings': '# local\n../peer-repo\n' }, peer),
+  );
+  assert.ok(
+    !resolved.includes('src/extras/index.js'),
+    'a root registered in .audit-siblings must resolve',
+  );
+});
+
+test('a bare fragment resolves against a local sibling extras root', () => {
+  // `fn/users.js` is written relative to a module root, so it only resolves
+  // against that root rather than this repository's own src/js/fn.
+  const readme = 'See `fn/users.js` and `fn/extras.js`.\n';
+  const files = {
+    'README.md': readme,
+    'src/app.js': 'x\n',
+    '.audit-siblings': '../peer-repo/src/extras\n',
+  };
+  const peer = {
+    'peer-repo/src/extras/fn/users.js': 'export const a = 1;\n',
+    'peer-repo/src/extras/fn/extras.js': 'export const b = 2;\n',
+  };
+
+  assert.ok(
+    tokens(
+      runAudit({ 'README.md': readme, 'src/app.js': 'x\n' }, peer),
+    ).includes('fn/users.js'),
+    'without an extras root the fragment must be reported',
+  );
+  const resolved = tokens(runAudit(files, peer));
+  assert.ok(!resolved.includes('fn/users.js'), 'fn/users.js must resolve');
+  assert.ok(!resolved.includes('fn/extras.js'), 'fn/extras.js must resolve');
 });
 
 test('a path into a git-ignored root is reported, not read as a convention', () => {
